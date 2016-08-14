@@ -18,6 +18,7 @@
 		6275BF071D609A1200F0B6BA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF031D609A1200F0B6BA /* MainTabBarController.swift */; };
 		6275BF081D609A1200F0B6BA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF041D609A1200F0B6BA /* TabBar.swift */; };
 		6275BF091D609A1200F0B6BA /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF051D609A1200F0B6BA /* TitleLabel.swift */; };
+		62FB440D1D60AD730046DD10 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FB440C1D60AD730046DD10 /* UIView+Frame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		6275BF031D609A1200F0B6BA /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		6275BF041D609A1200F0B6BA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		6275BF051D609A1200F0B6BA /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		62FB440C1D60AD730046DD10 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Frame.swift"; path = "Tools/UIView+Frame.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				6275BF011D609A1200F0B6BA /* Main */,
+				62FB440E1D60AD760046DD10 /* Tools */,
 				6275BEDD1D6099AA00F0B6BA /* AppDelegate.swift */,
 				6275BEE41D6099AA00F0B6BA /* Assets.xcassets */,
 				6275BEE61D6099AA00F0B6BA /* LaunchScreen.storyboard */,
@@ -117,6 +120,14 @@
 				6275BF051D609A1200F0B6BA /* TitleLabel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		62FB440E1D60AD760046DD10 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				62FB440C1D60AD730046DD10 /* UIView+Frame.swift */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 			files = (
 				6275BEDE1D6099AA00F0B6BA /* AppDelegate.swift in Sources */,
 				6275BF061D609A1200F0B6BA /* BarButton.swift in Sources */,
+				62FB440D1D60AD730046DD10 /* UIView+Frame.swift in Sources */,
 				6275BF071D609A1200F0B6BA /* MainTabBarController.swift in Sources */,
 				6275BF091D609A1200F0B6BA /* TitleLabel.swift in Sources */,
 				6275BF081D609A1200F0B6BA /* TabBar.swift in Sources */,
@@ -437,6 +449,7 @@
 				6275BEF91D6099AA00F0B6BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6275BEFA1D6099AA00F0B6BA /* Build configuration list for PBXNativeTarget "FakeNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +458,7 @@
 				6275BEFC1D6099AA00F0B6BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

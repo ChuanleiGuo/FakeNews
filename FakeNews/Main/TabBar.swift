@@ -16,7 +16,7 @@ class TabBar: UIView {
 
     weak var delegate: TabBarDelegate?
     
-    var selectedButton: BarButton!
+    //var selectedButton: BarButton!
     var imgView: UIImageView!
     
     func addImageView() {
@@ -41,6 +41,7 @@ class TabBar: UIView {
         
         if self.subviews.count == 2 {
             btn.tag = 1
+            //selectedButton = btn
             btnClicked(btn: btn)
         }
     
@@ -64,10 +65,10 @@ class TabBar: UIView {
     }
     
     func btnClicked(btn: BarButton) {
-        delegate?.changeSelectedIndex(from: selectedButton.tag, to: btn.tag)
+        //delegate?.changeSelectedIndex(from: selectedButton.tag, to: btn.tag)
         
-        selectedButton.isEnabled = true
-        selectedButton = btn
+        //selectedButton.isEnabled = true
+        //selectedButton = btn
         btn.isEnabled = false
     }
 }
