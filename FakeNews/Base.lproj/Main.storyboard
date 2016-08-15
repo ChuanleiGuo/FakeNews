@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="1241" y="179"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="yx0-ke-b4Y">
             <objects>
                 <viewController id="rUV-8N-fSQ" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="dhs-jt-z5r"/>
+                    <tabBarItem key="tabBarItem" title="" id="dhs-jt-z5r"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzl-vk-7Fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

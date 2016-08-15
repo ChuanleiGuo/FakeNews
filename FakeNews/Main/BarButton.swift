@@ -22,7 +22,7 @@ class BarButton: UIButton {
         super.layoutSubviews()
         
         if let imageView = imageView, let titleLabel = titleLabel {
-            imageView.frame = CGRect(x: (frame.width - imageView.width) / 2,
+            imageView.frame = CGRect(x: (width - imageView.width) / 2,
                                      y: 5, width: 25, height: 25)
             imageView.contentMode = .scaleAspectFit
             

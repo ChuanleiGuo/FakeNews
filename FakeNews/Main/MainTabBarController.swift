@@ -22,10 +22,10 @@ class MainTabBarController: UITabBarController {
         tabBar.addImageView()
         
         tabBar.addBarButton(withNorName: "tabbar_icon_news_normal", disName: "tabbar_icon_news_highlight", title: "新闻")
-        //tabBar.addBarButton(withNorName: "tabbar_icon_reader_normal", disName: "tabbar_icon_reader_highlight", title: "阅读")
-        //tabBar.addBarButton(withNorName: "tabbar_icon_media_normal", disName: "tabbar_icon_media_highlight", title: "视听")
-        //tabBar.addBarButton(withNorName: "tabbar_icon_found_normal", disName: "tabbar_icon_found_highlight", title: "发现")
-        //tabBar.addBarButton(withNorName: "tabbar_icon_me_normal", disName: "tabbar_icon_me_highlight", title: "我")
+        tabBar.addBarButton(withNorName: "tabbar_icon_reader_normal", disName: "tabbar_icon_reader_highlight", title: "阅读")
+        tabBar.addBarButton(withNorName: "tabbar_icon_media_normal", disName: "tabbar_icon_media_highlight", title: "视听")
+        tabBar.addBarButton(withNorName: "tabbar_icon_found_normal", disName: "tabbar_icon_found_highlight", title: "发现")
+        tabBar.addBarButton(withNorName: "tabbar_icon_me_normal", disName: "tabbar_icon_me_highlight", title: "我")
         
         self.selectedIndex = 0
     }

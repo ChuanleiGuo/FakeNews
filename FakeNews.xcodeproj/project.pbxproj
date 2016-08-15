@@ -12,12 +12,12 @@
 		6275BEE51D6099AA00F0B6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6275BEE41D6099AA00F0B6BA /* Assets.xcassets */; };
 		6275BEE81D6099AA00F0B6BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6275BEE61D6099AA00F0B6BA /* LaunchScreen.storyboard */; };
 		6275BEF31D6099AA00F0B6BA /* FakeNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BEF21D6099AA00F0B6BA /* FakeNewsTests.swift */; };
-		6275BEFF1D6099D500F0B6BA /* HYQiHei-50J.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6275BEFD1D6099D500F0B6BA /* HYQiHei-50J.ttf */; };
 		6275BF001D6099D500F0B6BA /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6275BEFE1D6099D500F0B6BA /* NewsURLs.plist */; };
 		6275BF061D609A1200F0B6BA /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF021D609A1200F0B6BA /* BarButton.swift */; };
 		6275BF071D609A1200F0B6BA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF031D609A1200F0B6BA /* MainTabBarController.swift */; };
 		6275BF081D609A1200F0B6BA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF041D609A1200F0B6BA /* TabBar.swift */; };
 		6275BF091D609A1200F0B6BA /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF051D609A1200F0B6BA /* TitleLabel.swift */; };
+		62EF58871D61E53E0014EFAB /* HYQiHei-50J.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62EF58861D61E53E0014EFAB /* HYQiHei-50J.ttf */; };
 		62FB440D1D60AD730046DD10 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FB440C1D60AD730046DD10 /* UIView+Frame.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,12 +41,12 @@
 		6275BEEE1D6099AA00F0B6BA /* FakeNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6275BEF21D6099AA00F0B6BA /* FakeNewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNewsTests.swift; sourceTree = "<group>"; };
 		6275BEF41D6099AA00F0B6BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6275BEFD1D6099D500F0B6BA /* HYQiHei-50J.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HYQiHei-50J.ttf"; sourceTree = "<group>"; };
 		6275BEFE1D6099D500F0B6BA /* NewsURLs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsURLs.plist; sourceTree = "<group>"; };
 		6275BF021D609A1200F0B6BA /* BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
 		6275BF031D609A1200F0B6BA /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		6275BF041D609A1200F0B6BA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		6275BF051D609A1200F0B6BA /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		62EF58861D61E53E0014EFAB /* HYQiHei-50J.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HYQiHei-50J.ttf"; sourceTree = "<group>"; };
 		62FB440C1D60AD730046DD10 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Frame.swift"; path = "Tools/UIView+Frame.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,8 +95,8 @@
 				6275BEE41D6099AA00F0B6BA /* Assets.xcassets */,
 				6275BEE61D6099AA00F0B6BA /* LaunchScreen.storyboard */,
 				6275BEE91D6099AA00F0B6BA /* Info.plist */,
-				6275BEFD1D6099D500F0B6BA /* HYQiHei-50J.ttf */,
 				6275BEFE1D6099D500F0B6BA /* NewsURLs.plist */,
+				62EF58861D61E53E0014EFAB /* HYQiHei-50J.ttf */,
 			);
 			path = FakeNews;
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6275BEFF1D6099D500F0B6BA /* HYQiHei-50J.ttf in Resources */,
+				62EF58871D61E53E0014EFAB /* HYQiHei-50J.ttf in Resources */,
 				6275BEE81D6099AA00F0B6BA /* LaunchScreen.storyboard in Resources */,
 				6275BF001D6099D500F0B6BA /* NewsURLs.plist in Resources */,
 				6275BEE51D6099AA00F0B6BA /* Assets.xcassets in Resources */,
