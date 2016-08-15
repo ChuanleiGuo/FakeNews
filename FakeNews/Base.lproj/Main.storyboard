@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rUV-8N-fSQ" kind="relationship" relationship="viewControllers" id="hGb-3I-MB5"/>
+                        <segue destination="gbg-1B-j3S" kind="relationship" relationship="viewControllers" id="hGb-3I-MB5"/>
                         <segue destination="Jf5-uB-zdK" kind="relationship" relationship="viewControllers" id="MIe-Za-oOX"/>
                         <segue destination="7lN-9i-89f" kind="relationship" relationship="viewControllers" id="piK-4P-iPg"/>
                         <segue destination="CyS-o8-UZW" kind="relationship" relationship="viewControllers" id="Pqb-cP-OQF"/>
@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtT-ee-UcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-215" y="179"/>
+            <point key="canvasLocation" x="511" y="215"/>
         </scene>
         <!--Item-->
         <scene sceneID="eII-Sh-jxc">
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6h-QW-lLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="179"/>
+            <point key="canvasLocation" x="1210" y="215"/>
         </scene>
         <!--Item-->
         <scene sceneID="P94-Fz-qcC">
@@ -82,12 +82,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIc-XD-Cvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241" y="179"/>
+            <point key="canvasLocation" x="1900" y="215"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="yx0-ke-b4Y">
             <objects>
-                <viewController id="rUV-8N-fSQ" sceneMemberID="viewController">
+                <viewController id="rUV-8N-fSQ" customClass="MainViewController" customModule="FakeNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RLE-3D-aS1"/>
                         <viewControllerLayoutGuide type="bottom" id="i9W-WY-4t1"/>
@@ -95,13 +95,54 @@
                     <view key="view" contentMode="scaleToFill" id="hjF-mg-cur">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoview_image_default_white" translatesAutoresizingMaskIntoConstraints="NO" id="3Fw-la-XKa"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKQ-zl-XYN" userLabel="small scroll view">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ggd-D7-ena"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjR-bs-SSC" userLabel="big scroll view"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Fw-la-XKa" firstAttribute="centerX" secondItem="hjF-mg-cur" secondAttribute="centerX" id="2UP-sK-ZfF"/>
+                            <constraint firstItem="i9W-WY-4t1" firstAttribute="top" secondItem="hjR-bs-SSC" secondAttribute="bottom" id="Amw-xX-Sv2"/>
+                            <constraint firstItem="hjR-bs-SSC" firstAttribute="leading" secondItem="hjF-mg-cur" secondAttribute="leading" id="Du9-t8-AmF"/>
+                            <constraint firstItem="XKQ-zl-XYN" firstAttribute="top" secondItem="RLE-3D-aS1" secondAttribute="bottom" id="HYg-cm-eNV"/>
+                            <constraint firstAttribute="trailing" secondItem="hjR-bs-SSC" secondAttribute="trailing" id="NOV-5M-I6P"/>
+                            <constraint firstItem="XKQ-zl-XYN" firstAttribute="leading" secondItem="hjF-mg-cur" secondAttribute="leading" id="cUX-KQ-Yus"/>
+                            <constraint firstItem="hjR-bs-SSC" firstAttribute="top" secondItem="XKQ-zl-XYN" secondAttribute="bottom" id="n7U-64-Vxl"/>
+                            <constraint firstAttribute="trailing" secondItem="XKQ-zl-XYN" secondAttribute="trailing" id="nrL-RC-o9p"/>
+                            <constraint firstItem="3Fw-la-XKa" firstAttribute="centerY" secondItem="hjF-mg-cur" secondAttribute="centerY" id="skd-Jf-mPs"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="dhs-jt-z5r"/>
+                    <navigationItem key="navigationItem" id="5fE-2s-FwN">
+                        <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="主页" id="lHa-N1-wdG"/>
+                        <barButtonItem key="leftBarButtonItem" image="search_icon" id="NnY-pG-ckd"/>
+                        <view key="titleView" contentMode="scaleToFill" id="vYF-7f-tTW">
+                            <rect key="frame" x="163" y="11" width="50" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11111" translatesAutoresizingMaskIntoConstraints="NO" id="MJF-vS-10W"/>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="MJF-vS-10W" firstAttribute="top" secondItem="vYF-7f-tTW" secondAttribute="top" id="0x8-kf-l0v"/>
+                                <constraint firstItem="MJF-vS-10W" firstAttribute="leading" secondItem="vYF-7f-tTW" secondAttribute="leading" id="87w-mb-tY8"/>
+                                <constraint firstAttribute="bottom" secondItem="MJF-vS-10W" secondAttribute="bottom" id="STA-8f-V4Y"/>
+                                <constraint firstAttribute="trailing" secondItem="MJF-vS-10W" secondAttribute="trailing" id="Xh6-5V-qwb"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bigScrollView" destination="hjR-bs-SSC" id="A14-fi-0L2"/>
+                        <outlet property="smallScorllView" destination="XKQ-zl-XYN" id="q9X-7m-J1u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzl-vk-7Fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-215" y="-526"/>
+            <point key="canvasLocation" x="509.60000000000002" y="-527.58620689655174"/>
         </scene>
         <!--Item-->
         <scene sceneID="ow1-bg-Vcj">
@@ -120,7 +161,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpP-0Q-AgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="-527"/>
+            <point key="canvasLocation" x="-215" y="215"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8ls-xN-YSf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gbg-1B-j3S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="dhs-jt-z5r"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Xqy-Yg-3Vz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rUV-8N-fSQ" kind="relationship" relationship="rootViewController" id="SmF-qb-6gr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6M-5H-Ht9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215.19999999999999" y="-526.6866566716642"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="11111" width="70" height="33"/>
+        <image name="photoview_image_default_white" width="320" height="70"/>
+        <image name="search_icon" width="24" height="24"/>
+    </resources>
 </document>
