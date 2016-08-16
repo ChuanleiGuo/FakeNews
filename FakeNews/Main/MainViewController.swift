@@ -18,9 +18,11 @@ class MainViewController: UIViewController {
     /* content scroll view*/
     @IBOutlet weak var bigScrollView: UIScrollView!
     
+    var rightItem: UIButton!
+    
     // MARK: lazy load
     
-    private lazy var arrayLists: NSArray! = {
+    private lazy var urlEntities: NSArray! = {
         guard let filePath = Bundle.main.path(forResource: "NewsURLs.plist", ofType: nil) else {
             return nil
         }
@@ -38,14 +40,42 @@ class MainViewController: UIViewController {
         smallScorllView.scrollsToTop = false
         addTitleLabels()
         
+        rightItem = UIButton()
+        if let win = UIApplication.shared.windows.first {
+            win.addSubview(rightItem)
+            rightItem.y = 20
+            rightItem.width = 45
+            rightItem.height = 45
+            rightItem.addTarget(self, action: #selector(rightItemClicked), for: .touchUpInside)
+            rightItem.x = UIScreen.main.bounds.size.width - rightItem.width
+            rightItem.setImage(UIImage(named:"top_navigation_square"), for: .normal)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        rightItem.isHidden = false
+        if UserDefaults.standard.bool(forKey: "rightItem") {
+            rightItem.isHidden = true
+            UserDefaults.standard.set(false, forKey: "rightItem")
+        }
+        rightItem.alpha = 0
+        UIView.animate(withDuration: 0.4) {
+            self.rightItem.alpha = 1
+        }
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillDisappear(_ animated: Bool) {
+        rightItem.isHidden = true
+        rightItem.transform = .identity
+        rightItem.setImage(UIImage(named:"top_navigation_square"), for: .normal)
     }
     
     // MARK: - Private Methods
+    
+    private func showRightItem() {
+        rightItem.isHidden = false
+    }
     
     // MARK: add components
     
@@ -64,7 +94,7 @@ class MainViewController: UIViewController {
             //let vc = childViewControllers[i]
             //label.text = vc.title
             
-            let item = arrayLists[i] as! [String: String]
+            let item = urlEntities[i] as! [String: String]
             label.text = item["title"]
             
             label.frame = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)
@@ -89,6 +119,10 @@ class MainViewController: UIViewController {
             
             // TODO: Scroll to Top
         }
+    }
+    
+    @objc private func rightItemClicked() {
+        // TODO:
     }
 }
 

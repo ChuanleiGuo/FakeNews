@@ -72,6 +72,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6216C0A51D6336A900FC0C60 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6275BEE61D6099AA00F0B6BA /* LaunchScreen.storyboard */,
+				6275BEE41D6099AA00F0B6BA /* Assets.xcassets */,
+				6275BEE91D6099AA00F0B6BA /* Info.plist */,
+				6275BEFE1D6099D500F0B6BA /* NewsURLs.plist */,
+				62EF58861D61E53E0014EFAB /* HYQiHei-50J.ttf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		6275BED11D6099AA00F0B6BA = {
 			isa = PBXGroup;
 			children = (
@@ -96,11 +108,7 @@
 				6275BF011D609A1200F0B6BA /* Main */,
 				62FB440E1D60AD760046DD10 /* Tools */,
 				6275BEDD1D6099AA00F0B6BA /* AppDelegate.swift */,
-				6275BEE41D6099AA00F0B6BA /* Assets.xcassets */,
-				6275BEE61D6099AA00F0B6BA /* LaunchScreen.storyboard */,
-				6275BEE91D6099AA00F0B6BA /* Info.plist */,
-				6275BEFE1D6099D500F0B6BA /* NewsURLs.plist */,
-				62EF58861D61E53E0014EFAB /* HYQiHei-50J.ttf */,
+				6216C0A51D6336A900FC0C60 /* Supporting Files */,
 			);
 			path = FakeNews;
 			sourceTree = "<group>";

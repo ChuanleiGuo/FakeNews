@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11191" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sK8-KI-goR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sK8-KI-goR">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,13 +38,25 @@
                     <view key="view" contentMode="scaleToFill" id="7v7-gP-a0x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="121" translatesAutoresizingMaskIntoConstraints="NO" id="Cch-Gb-nYA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="618" id="7NR-IQ-ySZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cch-Gb-nYA" firstAttribute="leading" secondItem="7v7-gP-a0x" secondAttribute="leading" id="VLm-aQ-xQa"/>
+                            <constraint firstItem="Cch-Gb-nYA" firstAttribute="top" secondItem="7v7-gP-a0x" secondAttribute="top" id="fU1-VH-7sl"/>
+                            <constraint firstAttribute="trailing" secondItem="Cch-Gb-nYA" secondAttribute="trailing" id="rQc-lT-upU"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="IU2-Cr-GWy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtT-ee-UcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511" y="215"/>
+            <point key="canvasLocation" x="509.60000000000002" y="214.54272863568218"/>
         </scene>
         <!--Item-->
         <scene sceneID="eII-Sh-jxc">
@@ -57,13 +69,25 @@
                     <view key="view" contentMode="scaleToFill" id="vA7-ud-g43">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="122" translatesAutoresizingMaskIntoConstraints="NO" id="E4n-N2-omG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="618" id="mHN-7s-cwO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="E4n-N2-omG" secondAttribute="trailing" id="edG-wu-6jI"/>
+                            <constraint firstItem="E4n-N2-omG" firstAttribute="top" secondItem="vA7-ud-g43" secondAttribute="top" id="h8Q-by-MPt"/>
+                            <constraint firstItem="E4n-N2-omG" firstAttribute="leading" secondItem="vA7-ud-g43" secondAttribute="leading" id="oyr-J8-UjY"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Z3D-Ob-7Cf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6h-QW-lLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="215"/>
+            <point key="canvasLocation" x="1208.8" y="214.54272863568218"/>
         </scene>
         <!--Item-->
         <scene sceneID="P94-Fz-qcC">
@@ -76,13 +100,25 @@
                     <view key="view" contentMode="scaleToFill" id="GJc-9D-ndO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="124" translatesAutoresizingMaskIntoConstraints="NO" id="jQ6-AT-ywt">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="618" id="Plq-lH-iGu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jQ6-AT-ywt" firstAttribute="leading" secondItem="GJc-9D-ndO" secondAttribute="leading" id="SuZ-fS-FKe"/>
+                            <constraint firstAttribute="trailing" secondItem="jQ6-AT-ywt" secondAttribute="trailing" id="cVl-Un-PAu"/>
+                            <constraint firstItem="jQ6-AT-ywt" firstAttribute="top" secondItem="GJc-9D-ndO" secondAttribute="top" id="kiO-6G-w3m"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Dl9-Up-2ys"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIc-XD-Cvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="215"/>
+            <point key="canvasLocation" x="1900" y="214.54272863568218"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="yx0-ke-b4Y">
@@ -155,13 +191,25 @@
                     <view key="view" contentMode="scaleToFill" id="qCf-BP-sFx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="125" translatesAutoresizingMaskIntoConstraints="NO" id="oXA-4Z-btU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="618" id="7xz-8V-Aig"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oXA-4Z-btU" firstAttribute="top" secondItem="qCf-BP-sFx" secondAttribute="top" id="6Ye-Eg-lX7"/>
+                            <constraint firstAttribute="trailing" secondItem="oXA-4Z-btU" secondAttribute="trailing" id="aoZ-5B-QMe"/>
+                            <constraint firstItem="oXA-4Z-btU" firstAttribute="leading" secondItem="qCf-BP-sFx" secondAttribute="leading" id="vuL-Nx-1Na"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Oe4-Wm-UlL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpP-0Q-AgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-215" y="215"/>
+            <point key="canvasLocation" x="-215.19999999999999" y="214.54272863568218"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ls-xN-YSf">
@@ -169,7 +217,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gbg-1B-j3S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="dhs-jt-z5r"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Xqy-Yg-3Vz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Xqy-Yg-3Vz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -191,6 +239,10 @@
     </scenes>
     <resources>
         <image name="11111" width="70" height="33"/>
+        <image name="121" width="375" height="618"/>
+        <image name="122" width="375" height="617"/>
+        <image name="124" width="375" height="617"/>
+        <image name="125" width="375" height="618"/>
         <image name="photoview_image_default_white" width="320" height="70"/>
         <image name="search_icon" width="24" height="24"/>
     </resources>
