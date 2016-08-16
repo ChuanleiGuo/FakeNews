@@ -44,16 +44,13 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-}
-
-// MARK: - Private Methods
-
-extension MainViewController {
+    
+    // MARK: - Private Methods
+    
     // MARK: add components
     
     private func addControllers() {
-    
+        
     }
     
     private func addTitleLabels() {
@@ -93,6 +90,12 @@ extension MainViewController {
             // TODO: Scroll to Top
         }
     }
+}
+
+
+
+extension MainViewController {
+    
     
     // MARK: scroll to top
     
