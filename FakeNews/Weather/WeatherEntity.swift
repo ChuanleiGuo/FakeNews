@@ -26,7 +26,7 @@ struct WeatherDetailEntity {
 
 struct WeatherEntity {
     var detailEntities: [WeatherDetailEntity]
-    var pm2_5Entities: [WeatherBgEntity]
-    let dt: String
+    var pm2_5Entity: WeatherBgEntity
+    let date: String
     let rt_temperature: Int
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HYQiHei-50J.ttf">
+            <string>HYQiHei-EZJ</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WeatherItemView" customModule="FakeNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyh-O0-nXp" userLabel="Title">
+                    <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J7K-zr-Nmq">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="Gvx-4t-ZjV"/>
+                        <constraint firstAttribute="width" constant="50" id="eRN-Xy-D3I"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30°/23°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnr-Qo-hj4" userLabel="Temperature">
+                    <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雷阵雨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnd-c0-bS3" userLabel="Weather">
+                    <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微风" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfP-eo-Gz3" userLabel="Wind">
+                    <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Dnr-Qo-hj4" firstAttribute="top" secondItem="J7K-zr-Nmq" secondAttribute="bottom" constant="8" id="6CB-1g-sWa"/>
+                <constraint firstItem="nfP-eo-Gz3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BOR-oY-utQ"/>
+                <constraint firstItem="nfP-eo-Gz3" firstAttribute="top" secondItem="qnd-c0-bS3" secondAttribute="bottom" constant="2" id="Fc6-2F-S8U"/>
+                <constraint firstItem="Xyh-O0-nXp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RKw-7s-uMr"/>
+                <constraint firstItem="Dnr-Qo-hj4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TfG-dr-ffJ"/>
+                <constraint firstItem="Xyh-O0-nXp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="XGS-T7-hM3"/>
+                <constraint firstItem="J7K-zr-Nmq" firstAttribute="top" secondItem="Xyh-O0-nXp" secondAttribute="bottom" constant="6" id="YiR-dE-H63"/>
+                <constraint firstItem="qnd-c0-bS3" firstAttribute="top" secondItem="Dnr-Qo-hj4" secondAttribute="bottom" constant="-3" id="b5s-B9-HcK"/>
+                <constraint firstItem="J7K-zr-Nmq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hcs-zL-cdm"/>
+                <constraint firstItem="qnd-c0-bS3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sYp-O0-1wi"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tempLabel" destination="Dnr-Qo-hj4" id="DNT-cd-g1g"/>
+                <outlet property="titleLabel" destination="Xyh-O0-nXp" id="j7f-E6-Nup"/>
+                <outlet property="weatherImg" destination="J7K-zr-Nmq" id="CkW-gy-OTM"/>
+                <outlet property="weatherLabel" destination="qnd-c0-bS3" id="Dfa-q9-jm8"/>
+                <outlet property="windLabel" destination="nfP-eo-Gz3" id="t80-39-RTb"/>
+            </connections>
+            <point key="canvasLocation" x="116" y="6"/>
+        </view>
+    </objects>
+</document>

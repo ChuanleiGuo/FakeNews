@@ -39,6 +39,9 @@
                         <constraint firstAttribute="width" constant="40" id="7VS-fH-YmP"/>
                     </constraints>
                     <state key="normal" image="weather_back"/>
+                    <connections>
+                        <action selector="back" destination="-1" eventType="touchUpInside" id="1gy-sQ-ru4"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KH0-QE-RvU">
                     <constraints>
