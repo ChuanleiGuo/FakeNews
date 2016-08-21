@@ -37,8 +37,8 @@ class WeatherItemView: UIView {
         }
     }
     
-    static func view() -> WeatherItemView {
-        return Bundle.main.loadNibNamed("WeatherItemView", owner: nil, options: nil)![0] as! WeatherItemView
+    class func view() -> WeatherItemView {
+        return Bundle.main.loadNibNamed("WeatherItemView", owner: nil, options: nil)!.first as! WeatherItemView
     }
     
 }

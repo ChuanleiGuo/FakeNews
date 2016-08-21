@@ -23,6 +23,9 @@ class WeatherDetailPage: UIViewController {
     
     // MARK: - Properties
     
+    var weatherModel: WeatherEntity!
+    var bottomView: UIView!
+    
     // MARK: IBOutlet
     
     @IBOutlet weak var bgImg: UIImageView!
@@ -32,11 +35,6 @@ class WeatherDetailPage: UIViewController {
     @IBOutlet weak var climateLabel: UILabel!
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var airPMLabel: UILabel!
-    
-    // MARK: Properties
-    
-    var weatherModel: WeatherEntity!
-    var bottomView: UIView!
     
     // MARK: - View Life Cycle
     
