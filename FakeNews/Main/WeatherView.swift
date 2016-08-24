@@ -8,11 +8,24 @@
 
 import UIKit
 
+@IBDesignable
+class WeatherActionView: UIView {
+    @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var titalLabel: UILabel!
+    
+    @IBInspectable var buttonBgColor: UIColor = UIColor.orange
+    
+    override func awakeFromNib() {
+        actionButton.backgroundColor = buttonBgColor
+        actionButton.layer.cornerRadius = actionButton.width / 2
+    }
+}
+
 class WeatherView: UIView {
     
     // MARK: - Properties
     
-    var bottomView: UIView!
     var weatherModel: WeatherEntity! {
         didSet {
             configureUI(withWeatherEntity: weatherModel)
@@ -37,8 +50,10 @@ class WeatherView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        bottomView = UIView()
-        addSubview(bottomView)
+    }
+    
+    func addAnimate() {
+        
     }
     
     // MARK: - Private Methods

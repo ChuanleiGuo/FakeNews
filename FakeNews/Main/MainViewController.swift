@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Properties
     
+    
     /* title scroll view */
     @IBOutlet weak var smallScorllView: UIScrollView!
     
@@ -19,6 +20,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var bigScrollView: UIScrollView!
     
     var rightItem: UIButton!
+    var weatherView: WeatherView!
+    var isWeatherShown = false
+    var transImageView: UIImageView!
     
     // MARK: lazy load
     
@@ -50,6 +54,8 @@ class MainViewController: UIViewController {
             rightItem.x = UIScreen.main.bounds.size.width - rightItem.width
             rightItem.setImage(UIImage(named:"top_navigation_square"), for: .normal)
         }
+        
+        addWeather()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,6 +115,7 @@ class MainViewController: UIViewController {
         smallScorllView.contentSize = CGSize(width: 70 * 8, height: 0)
     }
     
+    
     @objc private func titleLabelClickd(recognizer: UITapGestureRecognizer) {
         if let titleLabel = recognizer.view as? TitleLabel {
             let offsetX: CGFloat = CGFloat(titleLabel.tag) * bigScrollView.width
@@ -122,8 +129,65 @@ class MainViewController: UIViewController {
     }
     
     @objc private func rightItemClicked() {
-        // TODO:
+        if isWeatherShown {
+            weatherView.isHidden = true
+            transImageView.isHidden = true
+            UIView.animate(withDuration: 0.1, animations: {
+                let transform = self.rightItem.transform
+                self.rightItem.transform = transform.rotated(by: (1 / CGFloat.pi) * 5)
+            }, completion: { (finished) in
+                self.rightItem.setImage(UIImage(named: "top_navigation_square"), for: .normal)
+            })
+        } else {
+            rightItem.setImage(UIImage(named: "223"), for: .normal)
+            weatherView.isHidden = false
+            transImageView.isHidden = false
+            weatherView.addAnimate()
+            UIView.animate(withDuration: 0.2, animations: { 
+                let transform = self.rightItem.transform
+                self.rightItem.transform = transform.rotated(by: -(1 / CGFloat.pi) * 6)
+            }, completion: { (finished) in
+                UIView.animate(withDuration: 0.1, animations: { 
+                    let transform = self.rightItem.transform
+                    self.rightItem.transform = transform.rotated(by: (1 / CGFloat.pi))
+                })
+            })
+        }
+        isWeatherShown = !isWeatherShown
     }
+    
+    // MARK: Weather
+    
+    private func addWeather() {
+        let weatherDetails: [WeatherDetailEntity] = [
+            WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
+            WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
+            WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
+            WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
+        ];
+        let weatherBgEntity = WeatherBgEntity(background1: "", background2: "", aqi: "33", pm2_5: "125")
+        let weatherModel = WeatherEntity(detailEntities: weatherDetails, pm2_5Entity: weatherBgEntity, date: "8月14日", rt_temperature: 27)
+        
+        weatherView = WeatherView.view()
+        weatherView.weatherModel = weatherModel
+        weatherView.alpha = 0.9
+        let win = UIApplication.shared.windows.first!
+        win.addSubview(weatherView)
+        
+        transImageView = UIImageView(image: UIImage(named: "224"))
+        transImageView.width = 7
+        transImageView.height = 7
+        transImageView.y = 57
+        transImageView.x = UIScreen.main.bounds.size.width - 33
+        win.addSubview(transImageView)
+        
+        weatherView.frame = UIScreen.main.bounds
+        weatherView.y = 64
+        weatherView.height -= 64
+        weatherView.isHidden = true
+        transImageView.isHidden = true
+    }
+    
 }
 
 
