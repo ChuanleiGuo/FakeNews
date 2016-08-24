@@ -143,7 +143,7 @@ class MainViewController: UIViewController {
             weatherView.isHidden = false
             transImageView.isHidden = false
             weatherView.addAnimate()
-            UIView.animate(withDuration: 0.2, animations: { 
+            UIView.animate(withDuration: 0.2, animations: {
                 let transform = self.rightItem.transform
                 self.rightItem.transform = transform.rotated(by: -(1 / CGFloat.pi) * 6)
             }, completion: { (finished) in

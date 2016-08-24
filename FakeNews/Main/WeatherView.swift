@@ -8,20 +8,6 @@
 
 import UIKit
 
-@IBDesignable
-class WeatherActionView: UIView {
-    @IBOutlet weak var actionButton: UIButton!
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var titalLabel: UILabel!
-    
-    @IBInspectable var buttonBgColor: UIColor = UIColor.orange
-    
-    override func awakeFromNib() {
-        actionButton.backgroundColor = buttonBgColor
-        actionButton.layer.cornerRadius = actionButton.width / 2
-    }
-}
-
 class WeatherView: UIView {
     
     // MARK: - Properties
@@ -31,6 +17,7 @@ class WeatherView: UIView {
             configureUI(withWeatherEntity: weatherModel)
         }
     }
+    var contentView: UIView!
 
     // MARK: IBOutlets
     
@@ -42,6 +29,25 @@ class WeatherView: UIView {
     @IBOutlet weak var localLabel: UILabel!
     @IBOutlet weak var weatherImg: UIImageView!
     
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchImg: UIImageView!
+    
+    @IBOutlet weak var headlineButton: UIButton!
+    @IBOutlet weak var headlineImg: UIImageView!
+    
+    @IBOutlet weak var offlineButton: UIButton!
+    @IBOutlet weak var offlineImg: UIImageView!
+    
+    @IBOutlet weak var nightButton: UIButton!
+    @IBOutlet weak var nightImg: UIImageView!
+    
+    @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var scanImg: UIImageView!
+    
+    @IBOutlet weak var inviteButton: UIButton!
+    @IBOutlet weak var inviteImg: UIImageView!
+    
+    
     // MARK: - View Life Cycle
     
     class func view() -> WeatherView {
@@ -52,11 +58,21 @@ class WeatherView: UIView {
         super.awakeFromNib()
     }
     
+    
     func addAnimate() {
         
     }
     
     // MARK: - Private Methods
+    
+    private func setUpUI() {
+        searchButton.layer.cornerRadius = searchButton.width / 2
+        headlineButton.layer.cornerRadius = headlineButton.width / 2
+        offlineButton.layer.cornerRadius = offlineButton.width / 2
+        nightButton.layer.cornerRadius = nightButton.width / 2
+        scanButton.layer.cornerRadius = scanButton.width / 2
+        inviteButton.layer.cornerRadius = inviteButton.width / 2
+    }
     
     private func configureUI(withWeatherEntity entity: WeatherEntity) {
         nowTempLabel.text = "\(entity.rt_temperature)"

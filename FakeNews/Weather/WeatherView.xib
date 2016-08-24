@@ -101,7 +101,7 @@
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHu-vX-ywd" userLabel="upper stack">
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hte-dt-VOB" userLabel="搜索" customClass="WeatherActionView" customModule="FakeNews" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hte-dt-VOB" userLabel="搜索">
                                             <subviews>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVG-VD-wHj">
                                                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -136,11 +136,6 @@
                                                     <color key="value" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <outlet property="actionButton" destination="fVG-VD-wHj" id="x6C-cj-spm"/>
-                                                <outlet property="imgView" destination="65a-1Y-6Sf" id="mgO-pj-FO6"/>
-                                                <outlet property="titalLabel" destination="Zkq-0d-mTV" id="Hsg-Yj-w2A"/>
-                                            </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IE-O8-SaT" userLabel="上头条">
                                             <subviews>
@@ -360,8 +355,20 @@
                 <outlet property="airPMLabel" destination="Dyi-LN-3u9" id="9YZ-I3-f1D"/>
                 <outlet property="climateLabel" destination="6A6-9V-BXo" id="wDZ-ig-mgm"/>
                 <outlet property="dateWeekLabel" destination="kC8-ob-OcB" id="j0m-eZ-81a"/>
+                <outlet property="headlineButton" destination="jso-XT-Pjw" id="7ro-VP-BDc"/>
+                <outlet property="headlineImg" destination="SQc-rq-Tcr" id="Dx7-yd-svp"/>
+                <outlet property="inviteButton" destination="7IO-43-JRO" id="DaY-bc-UGP"/>
+                <outlet property="inviteImg" destination="Rx8-NA-ovK" id="1QT-y6-a1i"/>
                 <outlet property="localLabel" destination="fRz-2n-aC3" id="fx1-o8-Lcd"/>
+                <outlet property="nightButton" destination="7b3-hI-DPZ" id="P2L-iD-8jy"/>
+                <outlet property="nightImg" destination="IJg-WV-LJP" id="ANJ-5g-wZi"/>
                 <outlet property="nowTempLabel" destination="JnK-9H-uqt" id="Pdu-JV-LXU"/>
+                <outlet property="offlineButton" destination="9pw-Zp-5AO" id="bNr-Fr-ghz"/>
+                <outlet property="offlineImg" destination="rZ7-aa-FNQ" id="yeZ-aC-3fQ"/>
+                <outlet property="scanButton" destination="cvT-58-mbq" id="euq-Tf-jd8"/>
+                <outlet property="scanImg" destination="ls3-Tu-3AW" id="lUs-VO-5PI"/>
+                <outlet property="searchButton" destination="fVG-VD-wHj" id="PAN-fc-3tf"/>
+                <outlet property="searchImg" destination="65a-1Y-6Sf" id="fjm-3x-E7A"/>
                 <outlet property="tempLabel" destination="gPu-HA-YrU" id="JFA-Dx-gJE"/>
                 <outlet property="weatherImg" destination="3Fl-5i-bNx" id="R12-9y-RSP"/>
             </connections>
