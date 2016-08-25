@@ -58,6 +58,10 @@ class WeatherView: UIView {
         super.awakeFromNib()
     }
     
+    override func layoutSubviews() {
+        setUpUI()
+    }
+    
     
     func addAnimate() {
         
