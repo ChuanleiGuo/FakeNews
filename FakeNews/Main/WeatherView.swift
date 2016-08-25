@@ -64,7 +64,51 @@ class WeatherView: UIView {
     
     
     func addAnimate() {
+        searchButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        headlineButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        offlineButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        nightButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        scanButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        inviteButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         
+        searchImg.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        headlineImg.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        offlineImg.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        nightImg.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        scanImg.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        inviteImg.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        
+        UIView.animate(withDuration: 0.2, animations: { 
+            self.searchButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self.headlineButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self.offlineButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self.nightButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self.scanButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self.inviteButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            
+            self.searchImg.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.headlineImg.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.offlineImg.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.nightImg.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.scanImg.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.inviteImg.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        }) { (finished) in
+            UIView.animate(withDuration: 0.2, animations: { 
+                self.searchButton.transform = .identity
+                self.headlineButton.transform = .identity
+                self.offlineButton.transform = .identity
+                self.nightButton.transform = .identity
+                self.scanButton.transform = .identity
+                self.inviteButton.transform = .identity
+                
+                self.searchImg.transform = .identity
+                self.headlineImg.transform = .identity
+                self.offlineImg.transform = .identity
+                self.nightImg.transform = .identity
+                self.scanImg.transform = .identity
+                self.inviteImg.transform = .identity
+            })
+        }
     }
     
     // MARK: - Private Methods
