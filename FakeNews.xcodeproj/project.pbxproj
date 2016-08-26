@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620C9DEB1D7043CB0080A4FD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C9DEA1D7043CB0080A4FD /* WeatherViewModel.swift */; };
 		62415A671D69EBEF00B6E295 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62415A661D69EBEF00B6E295 /* WeatherView.swift */; };
 		62415A691D69EC0700B6E295 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62415A681D69EC0700B6E295 /* WeatherView.xib */; };
 		62642C721D65F6B700568355 /* WeatherEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62642C711D65F6B700568355 /* WeatherEntity.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		620C9DEA1D7043CB0080A4FD /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewModel.swift; path = Weather/WeatherViewModel.swift; sourceTree = "<group>"; };
 		62415A661D69EBEF00B6E295 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherView.swift; path = Main/WeatherView.swift; sourceTree = "<group>"; };
 		62415A681D69EC0700B6E295 /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherView.xib; path = Weather/WeatherView.xib; sourceTree = "<group>"; };
 		62642C711D65F6B700568355 /* WeatherEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherEntity.swift; path = Weather/WeatherEntity.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		620C9DEC1D7043D00080A4FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				620C9DEA1D7043CB0080A4FD /* WeatherViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		6216C0A51D6336A900FC0C60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 			children = (
 				62642C771D65F88100568355 /* Page */,
 				62642C701D65F65C00568355 /* Entity */,
+				620C9DEC1D7043D00080A4FD /* ViewModel */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6275BEDE1D6099AA00F0B6BA /* AppDelegate.swift in Sources */,
+				620C9DEB1D7043CB0080A4FD /* WeatherViewModel.swift in Sources */,
 				62EF58891D61E7A10014EFAB /* NavController.swift in Sources */,
 				62AF01301D6877A800C70FF2 /* WeatherItemView.swift in Sources */,
 				62415A671D69EBEF00B6E295 /* WeatherView.swift in Sources */,
