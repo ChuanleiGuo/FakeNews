@@ -111,6 +111,13 @@ class WeatherView: UIView {
         }
     }
     
+    // MARK: - IBAction Methods
+    
+    @IBAction func pushDetail() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pushWeatherDetail"),
+                                        object: nil)
+    }
+    
     // MARK: - Private Methods
     
     private func setUpUI() {

@@ -33,6 +33,10 @@ class MainViewController: UIViewController {
         return NSArray(contentsOfFile: filePath)
     }()
     
+    private lazy var weatherViewModel: WeatherViewModel = {
+        return WeatherViewModel()
+    }()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -55,7 +59,7 @@ class MainViewController: UIViewController {
             rightItem.setImage(UIImage(named:"top_navigation_square"), for: .normal)
         }
         
-        addWeather()
+        sendWeatherRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,15 +162,15 @@ class MainViewController: UIViewController {
     
     // MARK: Weather
     
-    private func addWeather() {
-        let weatherDetails: [WeatherDetailEntity] = [
-            WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
-            WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
-            WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
-            WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
-        ];
-        let weatherBgEntity = WeatherBgEntity(background1: "", background2: "", aqi: "33", pm2_5: "125")
-        let weatherModel = WeatherEntity(detailEntities: weatherDetails, pm2_5Entity: weatherBgEntity, date: "8月14日", rt_temperature: 27)
+    private func addWeather(weatherModel: WeatherEntity) {
+        //let weatherDetails: [WeatherDetailEntity] = [
+         //   WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
+        //    WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
+       //     WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
+       //     WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
+       // ];
+       // let weatherBgEntity = WeatherBgEntity(background1: "", background2: "", aqi: "33", pm2_5: "125")
+        //let weatherModel = WeatherEntity(detailEntities: weatherDetails, pm2_5Entity: weatherBgEntity, date: "8月14日", rt_temperature: 27)
         
         weatherView = WeatherView.view()
         weatherView.weatherModel = weatherModel
@@ -186,6 +190,36 @@ class MainViewController: UIViewController {
         weatherView.height -= 64
         weatherView.isHidden = true
         transImageView.isHidden = true
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(pushWeatherDetail),
+                                               name: NSNotification.Name(rawValue: "pushWeatherDetail"),
+                                               object: nil)
+    }
+    
+    private func sendWeatherRequest() {
+        weatherViewModel.fatchWeather { [unowned self] in
+            if let weatherModel = self.weatherViewModel.weatherModel {
+                self.addWeather(weatherModel: weatherModel)
+            }
+        }
+    }
+    
+    @objc private func pushWeatherDetail() {
+        if let weatherModel =  weatherViewModel.weatherModel {
+            isWeatherShown = false
+            let weatherDetailPage = WeatherDetailPage()
+            weatherDetailPage.weatherModel = weatherModel
+            navigationController!.pushViewController(weatherDetailPage, animated: true)
+            UIView.animate(withDuration: 0.1, animations: { 
+                self.weatherView.alpha = 0
+            }, completion: { (finished) in
+                self.weatherView.alpha = 0.9
+                self.weatherView.isHidden = true
+                self.transImageView.isHidden = true
+            })
+        }
+        
     }
     
 }

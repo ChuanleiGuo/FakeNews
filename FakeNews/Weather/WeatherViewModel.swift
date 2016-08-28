@@ -13,8 +13,8 @@ class WeatherViewModel {
     var weatherModel: WeatherEntity?
     private var dataTask: URLSessionDataTask?
     
-    func fatchWeather() {
-        let url = URL(string: "http://c.3g.163.com/nc/weather/5YyX5LqsfOWMl%2BS6rA%3D%3D.html")!
+    func fatchWeather(completionHandler: @escaping () -> Void) {
+        let url = URL(string: "https://c.3g.163.com/nc/weather/5YyX5LqsfOWMl%2BS6rA%3D%3D.html")!
         let session = URLSession.shared
         dataTask = session.dataTask(with: url, completionHandler: {
             [unowned self] (data, response, error) in
@@ -22,6 +22,11 @@ class WeatherViewModel {
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                 if let data = data, let json = self.parseJSON(data: data) {
                     self.weatherModel = self.parseDictionary(json)
+                    
+                    let queue = DispatchQueue.main
+                    queue.async {
+                        completionHandler()
+                    }
                 }
             }
         })

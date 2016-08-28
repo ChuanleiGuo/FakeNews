@@ -73,7 +73,7 @@ class WeatherDetailPage: UIViewController {
     // MARK: - IBAction
     
     @IBAction func back() {
-        // navigationController?.popViewController(animated: true)
+        navigationController!.popViewController(animated: true)
     }
     
     // MARK: - Private Methods
@@ -137,6 +137,8 @@ class WeatherDetailPage: UIViewController {
             weatherImg.image = UIImage(named: "sandfloat")
         }
         // TODO: Add background image
-        
+        let bgURL = URL(string: self.weatherModel.pm2_5Entity.background2)!
+        bgImg.loadImage(withURL: bgURL,
+                        placeHolderImage: UIImage(named: "QingTian")!)
     }
 }
