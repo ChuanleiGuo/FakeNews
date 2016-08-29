@@ -158,7 +158,7 @@
                         <barButtonItem key="backBarButtonItem" title="主页" id="lHa-N1-wdG"/>
                         <barButtonItem key="leftBarButtonItem" image="search_icon" id="NnY-pG-ckd"/>
                         <view key="titleView" contentMode="scaleToFill" id="vYF-7f-tTW">
-                            <rect key="frame" x="163" y="11" width="50" height="23"/>
+                            <rect key="frame" x="162.5" y="10.5" width="50" height="23"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11111" translatesAutoresizingMaskIntoConstraints="NO" id="MJF-vS-10W"/>
@@ -217,7 +217,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gbg-1B-j3S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="dhs-jt-z5r"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Xqy-Yg-3Vz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Xqy-Yg-3Vz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
