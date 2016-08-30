@@ -18,6 +18,7 @@
 		62642C721D65F6B700568355 /* WeatherEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62642C711D65F6B700568355 /* WeatherEntity.swift */; };
 		62642C751D65F87C00568355 /* WeatherDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62642C731D65F87C00568355 /* WeatherDetailPage.swift */; };
 		62642C761D65F87C00568355 /* WeatherDetailPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62642C741D65F87C00568355 /* WeatherDetailPage.xib */; };
+		6271AC3A1D754E2D00F8B141 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6271AC391D754E2D00F8B141 /* MJExtension.framework */; };
 		6275BEDE1D6099AA00F0B6BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BEDD1D6099AA00F0B6BA /* AppDelegate.swift */; };
 		6275BEE31D6099AA00F0B6BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6275BEE11D6099AA00F0B6BA /* Main.storyboard */; };
 		6275BEE51D6099AA00F0B6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6275BEE41D6099AA00F0B6BA /* Assets.xcassets */; };
@@ -28,6 +29,10 @@
 		6275BF071D609A1200F0B6BA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF031D609A1200F0B6BA /* MainTabBarController.swift */; };
 		6275BF081D609A1200F0B6BA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF041D609A1200F0B6BA /* TabBar.swift */; };
 		6275BF091D609A1200F0B6BA /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6275BF051D609A1200F0B6BA /* TitleLabel.swift */; };
+		62A8BCEA1D756C900001FA04 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A8BCE91D756C900001FA04 /* NewsViewModel.swift */; };
+		62A8BCEE1D756F740001FA04 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A8BCEC1D756F740001FA04 /* ReactiveCocoa.framework */; };
+		62A8BCEF1D756F740001FA04 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A8BCED1D756F740001FA04 /* Result.framework */; };
+		62A8BCF11D7586C60001FA04 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A8BCF01D7586C60001FA04 /* WebImage.framework */; };
 		62AF01301D6877A800C70FF2 /* WeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AF012F1D6877A800C70FF2 /* WeatherItemView.swift */; };
 		62AF01321D6877DC00C70FF2 /* WeatherItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62AF01311D6877DC00C70FF2 /* WeatherItemView.xib */; };
 		62EF58871D61E53E0014EFAB /* HYQiHei-50J.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62EF58861D61E53E0014EFAB /* HYQiHei-50J.ttf */; };
@@ -58,6 +63,7 @@
 		62642C711D65F6B700568355 /* WeatherEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherEntity.swift; path = Weather/WeatherEntity.swift; sourceTree = "<group>"; };
 		62642C731D65F87C00568355 /* WeatherDetailPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDetailPage.swift; path = Weather/WeatherDetailPage.swift; sourceTree = "<group>"; };
 		62642C741D65F87C00568355 /* WeatherDetailPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherDetailPage.xib; path = Weather/WeatherDetailPage.xib; sourceTree = "<group>"; };
+		6271AC391D754E2D00F8B141 /* MJExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJExtension.framework; path = Carthage/Build/iOS/MJExtension.framework; sourceTree = "<group>"; };
 		6275BEDA1D6099AA00F0B6BA /* FakeNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6275BEDD1D6099AA00F0B6BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6275BEE21D6099AA00F0B6BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +78,10 @@
 		6275BF031D609A1200F0B6BA /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		6275BF041D609A1200F0B6BA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		6275BF051D609A1200F0B6BA /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		62A8BCE91D756C900001FA04 /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewModel.swift; path = News/NewsViewModel.swift; sourceTree = "<group>"; };
+		62A8BCEC1D756F740001FA04 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		62A8BCED1D756F740001FA04 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		62A8BCF01D7586C60001FA04 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		62AF012F1D6877A800C70FF2 /* WeatherItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherItemView.swift; path = Weather/WeatherItemView.swift; sourceTree = "<group>"; };
 		62AF01311D6877DC00C70FF2 /* WeatherItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherItemView.xib; path = Weather/WeatherItemView.xib; sourceTree = "<group>"; };
 		62EF58861D61E53E0014EFAB /* HYQiHei-50J.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HYQiHei-50J.ttf"; sourceTree = "<group>"; };
@@ -85,6 +95,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6271AC3A1D754E2D00F8B141 /* MJExtension.framework in Frameworks */,
+				62A8BCEE1D756F740001FA04 /* ReactiveCocoa.framework in Frameworks */,
+				62A8BCEF1D756F740001FA04 /* Result.framework in Frameworks */,
+				62A8BCF11D7586C60001FA04 /* WebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +138,7 @@
 			children = (
 				622FC6051D7447E000DF01E0 /* Page */,
 				622FC60C1D745E9100DF01E0 /* Entity */,
+				62A8BCEB1D756C990001FA04 /* ViewModel */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -177,12 +192,24 @@
 			name = Page;
 			sourceTree = "<group>";
 		};
+		6271AC381D754E2D00F8B141 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62A8BCF01D7586C60001FA04 /* WebImage.framework */,
+				62A8BCEC1D756F740001FA04 /* ReactiveCocoa.framework */,
+				62A8BCED1D756F740001FA04 /* Result.framework */,
+				6271AC391D754E2D00F8B141 /* MJExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6275BED11D6099AA00F0B6BA = {
 			isa = PBXGroup;
 			children = (
 				6275BEDC1D6099AA00F0B6BA /* FakeNews */,
 				6275BEF11D6099AA00F0B6BA /* FakeNewsTests */,
 				6275BEDB1D6099AA00F0B6BA /* Products */,
+				6271AC381D754E2D00F8B141 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +257,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		62A8BCEB1D756C990001FA04 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				62A8BCE91D756C900001FA04 /* NewsViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		62FB440E1D60AD760046DD10 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +284,7 @@
 				6275BED61D6099AA00F0B6BA /* Sources */,
 				6275BED71D6099AA00F0B6BA /* Frameworks */,
 				6275BED81D6099AA00F0B6BA /* Resources */,
+				6271AC3B1D754E4000F8B141 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -345,12 +381,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6271AC3B1D754E4000F8B141 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MJExtension.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6275BED61D6099AA00F0B6BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6243D75B1D732B37000230A4 /* UIImageView+DownloadImage.swift in Sources */,
+				62A8BCEA1D756C900001FA04 /* NewsViewModel.swift in Sources */,
 				6275BEDE1D6099AA00F0B6BA /* AppDelegate.swift in Sources */,
 				620C9DEB1D7043CB0080A4FD /* WeatherViewModel.swift in Sources */,
 				62EF58891D61E7A10014EFAB /* NavController.swift in Sources */,
@@ -505,6 +561,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C3W72UD5DN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FakeNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChuanleiGuo.FakeNews;
@@ -518,6 +578,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C3W72UD5DN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FakeNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChuanleiGuo.FakeNews;

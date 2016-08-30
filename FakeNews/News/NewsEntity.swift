@@ -25,7 +25,7 @@ class NewsEntity: NSObject {
     /**
      *  The array of images
      */
-    var imgextra: [String] = []
+    var imgextra: Array<[String: String]> = []
     var photosetID: String = ""
     var hasHead: NSNumber = false
     var hasImg: NSNumber = false
@@ -79,6 +79,9 @@ class NewsEntity: NSObject {
     /**
      *  The style of big picture
      */
+    var imgType: NSNumber = 0
+    var specialextra = [String]()
+    
     var boardid: String = ""
     var commentid: String = ""
     var speciallogo: NSNumber = 0
