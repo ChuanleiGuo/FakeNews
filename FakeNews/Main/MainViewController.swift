@@ -24,13 +24,15 @@ class MainViewController: UIViewController {
     var isWeatherShown = false
     var transImageView: UIImageView!
     
+    var needScrollToTopPage: NewsTableViewPage!
+    
     // MARK: lazy load
     
-    private lazy var urlEntities: NSArray! = {
+    private lazy var urlEntities: Array<[String: String]>! = {
         guard let filePath = Bundle.main.path(forResource: "NewsURLs.plist", ofType: nil) else {
             return nil
         }
-        return NSArray(contentsOfFile: filePath)
+        return NSArray(contentsOfFile: filePath) as! Array<[String: String]>
     }()
     
     private lazy var weatherViewModel: WeatherViewModel = {
@@ -46,7 +48,22 @@ class MainViewController: UIViewController {
         smallScorllView.showsVerticalScrollIndicator = false
         smallScorllView.showsHorizontalScrollIndicator = false
         smallScorllView.scrollsToTop = false
+        bigScrollView.scrollsToTop = false
+        bigScrollView.delegate = self
+        
+        addControllers()
         addTitleLabels()
+        
+        let contentX = CGFloat(childViewControllers.count) * UIScreen.main.bounds.size.width
+        bigScrollView.contentSize = CGSize(width: contentX, height: 0)
+        bigScrollView.isPagingEnabled = true
+        
+        if let vc = childViewControllers.first, let label = smallScorllView.subviews.first as? TitleLabel {
+            vc.view.frame = bigScrollView.bounds
+            bigScrollView.addSubview(vc.view)
+            label.scale = 1.0
+            bigScrollView.showsHorizontalScrollIndicator = false
+        }
         
         rightItem = UIButton()
         if let win = UIApplication.shared.windows.first {
@@ -59,6 +76,7 @@ class MainViewController: UIViewController {
             rightItem.setImage(UIImage(named:"top_navigation_square"), for: .normal)
         }
         
+        needScrollToTopPage = childViewControllers[0] as! NewsTableViewPage
         sendWeatherRequest()
     }
     
@@ -90,24 +108,31 @@ class MainViewController: UIViewController {
     // MARK: add components
     
     private func addControllers() {
-        
+        for i in 0..<urlEntities.count {
+            guard let vc = UIStoryboard(name: "News", bundle: Bundle.main)
+                .instantiateInitialViewController() as? NewsTableViewPage else {
+                return
+            }
+            vc.title = urlEntities[i]["title"]
+            vc.urlString = urlEntities[i]["urlString"]
+            addChildViewController(vc)
+        }
     }
     
     private func addTitleLabels() {
         for i in 0..<8 {
-            let labelWidth: CGFloat = 70
+            let labelWidth: CGFloat = 80
             let labelHeight: CGFloat = 40
-            let labelX: CGFloat = CGFloat(i) * labelWidth
+            let labelX: CGFloat = CGFloat(i) * labelWidth * 0.8
             let labelY: CGFloat = 0
+            //let labelFrame = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)
             
             let label = TitleLabel()
-            //let vc = childViewControllers[i]
-            //label.text = vc.title
-            
-            let item = urlEntities[i] as! [String: String]
-            label.text = item["title"]
-            
+            let vc = childViewControllers[i]
+            label.text = vc.title
             label.frame = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)
+            label.scale = 0.0
+            
             label.font = UIFont(name: "HYQiHei", size: 19)
             smallScorllView.addSubview(label)
             label.tag = i
@@ -226,7 +251,7 @@ class MainViewController: UIViewController {
 
 
 
-extension MainViewController {
+extension MainViewController: UIScrollViewDelegate {
     
     
     // MARK: scroll to top

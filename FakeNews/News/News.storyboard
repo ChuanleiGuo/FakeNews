@@ -86,7 +86,7 @@
                                     <outlet property="titleLabel" destination="euX-VQ-RQ2" id="8fR-6J-5H1"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="131" id="w9R-RJ-3hX" customClass="NewsCell" customModule="FakeNews" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesCell" rowHeight="131" id="w9R-RJ-3hX" customClass="NewsCell" customModule="FakeNews" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w9R-RJ-3hX" id="aGB-O6-Bd8">

@@ -32,6 +32,7 @@ class NewsTableViewPage: UITableViewController {
         
         view.backgroundColor = UIColor.clear
         // TODO: - Refresh
+        loadData()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -55,16 +56,23 @@ class NewsTableViewPage: UITableViewController {
     
     func loadData(forType type: Int, withURL url: String) {
         let urlString = url as NSString
+        let queue = DispatchQueue.main
         viewModel.fetchNewsEntityCommand.execute(urlString).subscribeNext({
             [weak self] (arrayM) in
             if let strongSelf = self {
                 if let arrayM = arrayM as? [NewsEntity] {
                     if type == 1 {
                         strongSelf.arrayList = arrayM
-                        strongSelf.tableView.reloadData()
+                        queue.async {
+                            strongSelf.tableView.reloadData()
+                        }
+                        // strongSelf.tableView.reloadData()
                     } else if type == 2 {
                         strongSelf.arrayList.append(contentsOf: arrayM)
-                        strongSelf.tableView.reloadData()
+                        queue.async {
+                            strongSelf.tableView.reloadData()
+                        }
+                        //strongSelf.tableView.reloadData()
                     }
                 }
             }

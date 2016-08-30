@@ -30,22 +30,30 @@ class NewsCell: UITableViewCell {
     
     private func configureCell() {
         imgIcon.sd_setImage(with: URL(string: newsModel.imgsrc), placeholderImage: UIImage(named: "302"))
-        titleLabel.text = newsModel.title
-        subtitleLabel.text = newsModel.scource
         
-        let count = newsModel.replyCount.intValue
+        if titleLabel != nil {
+            titleLabel.text = newsModel.title
+        }
+        
+        if subtitleLabel != nil {
+            subtitleLabel.text = newsModel.scource
+        }
+        
+        let count = Float(newsModel.replyCount.intValue)
         let displayCount: String
         if count > 10000 {
             displayCount = String(format: "%.1f万跟帖", count / 10000)
         } else {
             displayCount = String(format: "%.0f跟帖", count)
         }
-        replyLabel.text = displayCount
+        if replyLabel != nil {
+            replyLabel.text = displayCount
+        }
         
-        if newsModel.imgextra.count == 2 {
-            self.imgOther1.sd_setImage(with: URL(string: newsModel.imgextra[0]["imgsrc"]!),
+        if newsModel.imgextra.count == 2 && imgOther1 != nil && imgOther2 != nil {
+            imgOther1.sd_setImage(with: URL(string: newsModel.imgextra[0]["imgsrc"]!),
                                        placeholderImage: UIImage(named: "302"))
-            self.imgOther2.sd_setImage(with: URL(string: newsModel.imgextra[1]["imgsrc"]!),
+            imgOther2.sd_setImage(with: URL(string: newsModel.imgextra[1]["imgsrc"]!),
                                        placeholderImage: UIImage(named: "302"))
         }
     }
