@@ -1,3 +1,4 @@
 github "CoderMJLee/MJExtension" "3.0.13"
+github "CoderMJLee/MJRefresh" "3.1.12"
 github "ReactiveCocoa/ReactiveCocoa" "v2.5"
 github "rs/SDWebImage" "3.8.1"
