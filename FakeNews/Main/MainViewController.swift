@@ -152,8 +152,7 @@ class MainViewController: UIViewController {
             let offset = CGPoint(x: offsetX, y: offsetY)
             
             bigScrollView.setContentOffset(offset, animated: true)
-            
-            // TODO: Scroll to Top
+            setScrollToTopPage(withIndex: titleLabel.tag)
         }
     }
     
@@ -188,14 +187,6 @@ class MainViewController: UIViewController {
     // MARK: Weather
     
     private func addWeather(weatherModel: WeatherEntity) {
-        //let weatherDetails: [WeatherDetailEntity] = [
-         //   WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
-        //    WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
-       //     WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
-       //     WeatherDetailEntity(wind: "北风", lunar: "八月初七", date: "8月24日", climate: "雷阵雨", temperature: "35C", week: "星期二"),
-       // ];
-       // let weatherBgEntity = WeatherBgEntity(background1: "", background2: "", aqi: "33", pm2_5: "125")
-        //let weatherModel = WeatherEntity(detailEntities: weatherDetails, pm2_5Entity: weatherBgEntity, date: "8月14日", rt_temperature: 27)
         
         weatherView = WeatherView.view()
         weatherView.weatherModel = weatherModel
@@ -249,12 +240,66 @@ class MainViewController: UIViewController {
     
 }
 
-
-
 extension MainViewController: UIScrollViewDelegate {
     
     
     // MARK: scroll to top
+    func setScrollToTopPage(withIndex index: Int) {
+        needScrollToTopPage.tableView.scrollsToTop = false
+        needScrollToTopPage = childViewControllers[index] as! NewsTableViewPage
+        needScrollToTopPage.tableView.scrollsToTop = true
+    }
     
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x / bigScrollView.width)
+        
+        let titleLabel = smallScorllView.subviews[index] as! TitleLabel
+        
+        var offsetX = titleLabel.center.x - smallScorllView.width * 0.5
+        let offsetMax = smallScorllView.contentSize.width - smallScorllView.width
+        if offsetX < 0 {
+            offsetX = 0
+        } else if offsetX > offsetMax {
+            offsetX = offsetMax
+        }
+        
+        let offset = CGPoint(x: offsetX, y: smallScorllView.contentOffset.y)
+        smallScorllView.setContentOffset(offset, animated: true)
+        for (idx, label) in smallScorllView.subviews.enumerated() {
+            if idx != index {
+                (label as! TitleLabel).scale = 0.0
+            }
+        }
+        
+        let newVC = childViewControllers[index] as! NewsTableViewPage
+        newVC.index = index
+        setScrollToTopPage(withIndex: index)
+        
+        if newVC.view.superview != nil {
+            return
+        }
+        
+        newVC.view.frame = scrollView.bounds
+        bigScrollView.addSubview(newVC.view)
+    }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollViewDidEndScrollingAnimation(scrollView)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let value = abs(scrollView.contentOffset.x / scrollView.width)
+        let leftIndex = Int(value)
+        let rightIndex = leftIndex + 1
+        let scaleRight = value - CGFloat(leftIndex)
+        let scaleLeft = 1 - scaleRight
+        
+        let labelLeft = smallScorllView.subviews[leftIndex] as! TitleLabel
+        labelLeft.scale = scaleLeft
+        
+        if rightIndex < smallScorllView.subviews.count {
+            let labelRight = smallScorllView.subviews[rightIndex] as! TitleLabel
+            labelRight.scale = scaleRight
+        }
+    }
 }
