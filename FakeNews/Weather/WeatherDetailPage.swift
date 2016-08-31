@@ -138,7 +138,6 @@ class WeatherDetailPage: UIViewController {
         }
         // TODO: Add background image
         let bgURL = URL(string: self.weatherModel.pm2_5Entity.background2)!
-        bgImg.loadImage(withURL: bgURL,
-                        placeHolderImage: UIImage(named: "QingTian")!)
+        bgImg.sd_setImage(with: bgURL, placeholderImage: UIImage(named: "QingTian"))
     }
 }
