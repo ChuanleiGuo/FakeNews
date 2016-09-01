@@ -344,7 +344,7 @@
         <!--PhotoSet-->
         <scene sceneID="KKC-tr-7pn">
             <objects>
-                <viewController id="QVx-wo-9sp" customClass="PhotoSetPage" customModule="FakeNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="QVx-wo-9sp" customClass="PhotoSetPage" customModule="FakeNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NqY-I4-edO"/>
                         <viewControllerLayoutGuide type="bottom" id="9Oj-Eu-8xU"/>

@@ -19,11 +19,11 @@ class NewsViewModel {
     
     func setupRACCommand() {
         fetchNewsEntityCommand = RACCommand(signal: {
-            [weak self] (input) -> RACSignal in
+            [unowned self] (input) -> RACSignal in
             
             return RACSignal.createSignal({ (subscriber) -> RACDisposable? in
-                if let strongSelf = self, let input = input as? String {
-                    strongSelf.requestForNewsEntity(withURL: input, success: { (array) in
+                if let input = input as? String {
+                    self.requestForNewsEntity(withURL: input, success: { (array) in
                         let arrayM = NewsEntity.mj_objectArray(withKeyValuesArray: array)
                         subscriber.sendNext(arrayM)
                         subscriber.sendCompleted()

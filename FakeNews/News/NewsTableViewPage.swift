@@ -82,6 +82,14 @@ class NewsTableViewPage: UITableViewController {
         })
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let x = tableView.indexPathForSelectedRow?.row {
+            let pc = segue.destination as! PhotoSetPage
+            pc.newsModel = arrayList[x]
+        }
+    }
     
     // MARK: - UITableViewDataSource
     
