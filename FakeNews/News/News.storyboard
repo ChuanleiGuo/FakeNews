@@ -353,6 +353,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfP-do-9qk" userLabel="Photo Scroll View">
+                                <connections>
+                                    <outlet property="delegate" destination="QVx-wo-9sp" id="Bh8-OP-uQs"/>
+                                </connections>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HCe-UD-WIr" userLabel="Footer View">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_star" translatesAutoresizingMaskIntoConstraints="NO" id="I3F-kE-GYv">
@@ -385,11 +390,6 @@
                                     <constraint firstAttribute="height" constant="50" id="yN5-Rc-Xyl"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfP-do-9qk" userLabel="Photo Scroll View">
-                                <connections>
-                                    <outlet property="delegate" destination="QVx-wo-9sp" id="Bh8-OP-uQs"/>
-                                </connections>
-                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4i-7l-haf" userLabel="Return">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="ALC-N8-PDw"/>
@@ -452,12 +452,12 @@
                             <constraint firstItem="HCe-UD-WIr" firstAttribute="top" secondItem="AfP-do-9qk" secondAttribute="bottom" id="E64-Gq-Bis"/>
                             <constraint firstAttribute="trailing" secondItem="AfP-do-9qk" secondAttribute="trailing" id="JCr-S3-8Gt"/>
                             <constraint firstAttribute="trailing" secondItem="HCe-UD-WIr" secondAttribute="trailing" id="Nfc-As-3Y4"/>
+                            <constraint firstItem="AfP-do-9qk" firstAttribute="top" secondItem="NqY-I4-edO" secondAttribute="bottom" id="SS5-xV-rMs"/>
                             <constraint firstItem="j4i-7l-haf" firstAttribute="top" secondItem="NqY-I4-edO" secondAttribute="bottom" constant="5" id="Tqn-6u-L7y"/>
                             <constraint firstItem="HCe-UD-WIr" firstAttribute="leading" secondItem="jWK-bH-PKX" secondAttribute="leading" id="W4W-jx-UTt"/>
                             <constraint firstItem="AfP-do-9qk" firstAttribute="leading" secondItem="jWK-bH-PKX" secondAttribute="leading" id="YFo-Gs-cOk"/>
                             <constraint firstItem="HCe-UD-WIr" firstAttribute="top" secondItem="D0X-uk-aoE" secondAttribute="bottom" constant="8" id="ZoM-Uc-bOS"/>
                             <constraint firstItem="9nk-aI-yz1" firstAttribute="leading" secondItem="jWK-bH-PKX" secondAttribute="leading" constant="5" id="emb-Qc-pAz"/>
-                            <constraint firstItem="AfP-do-9qk" firstAttribute="top" secondItem="jWK-bH-PKX" secondAttribute="top" id="fxG-We-Uq9"/>
                             <constraint firstAttribute="trailing" secondItem="otY-Cx-oXM" secondAttribute="trailing" constant="5" id="l0b-xy-1uH"/>
                             <constraint firstItem="otY-Cx-oXM" firstAttribute="top" secondItem="NqY-I4-edO" secondAttribute="bottom" constant="5" id="yxI-1u-qM2"/>
                         </constraints>

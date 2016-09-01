@@ -98,7 +98,7 @@ class PhotoSetPage: UIViewController, UIScrollViewDelegate {
             let imageView = UIImageView()
             imageView.height = photoScrollView.height
             imageView.width = photoScrollView.width
-            imageView.y = -64
+            imageView.y = 0
             imageView.x = CGFloat(i) * imageView.width
             
             imageView.contentMode = .scaleAspectFit
@@ -107,10 +107,10 @@ class PhotoSetPage: UIViewController, UIScrollViewDelegate {
         setImage(withIndex: 0)
         
         photoScrollView.contentOffset = CGPoint.zero
-        photoScrollView.contentSize = CGSize(width: photoScrollView.width * CGFloat(count), height: 0)
         photoScrollView.showsHorizontalScrollIndicator = false
         photoScrollView.showsVerticalScrollIndicator = false
         photoScrollView.isPagingEnabled = true
+        photoScrollView.contentSize = CGSize(width: photoScrollView.width * CGFloat(count), height: 0)
     }
     
     private func setImage(withIndex index: Int) {
