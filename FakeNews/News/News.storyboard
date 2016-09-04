@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M0Z-TK-JQr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M0Z-TK-JQr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -84,6 +84,7 @@
                                     <outlet property="replyLabel" destination="tcP-80-3C2" id="vxs-yh-VZU"/>
                                     <outlet property="subtitleLabel" destination="Saa-sN-r2V" id="ZOZ-QS-2wK"/>
                                     <outlet property="titleLabel" destination="euX-VQ-RQ2" id="8fR-6J-5H1"/>
+                                    <segue destination="rMs-nV-eOe" kind="show" id="MgC-ZU-fNG"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesCell" rowHeight="131" id="w9R-RJ-3hX" customClass="NewsCell" customModule="FakeNews" customModuleProvider="target">
@@ -195,6 +196,7 @@
                                     <outlet property="imgIcon" destination="5BM-6X-V5j" id="DtL-5q-phi"/>
                                     <outlet property="subtitleLabel" destination="dvS-SK-DhL" id="KvG-py-8Se"/>
                                     <outlet property="titleLabel" destination="iLq-S7-I5L" id="3o2-9c-6e5"/>
+                                    <segue destination="rMs-nV-eOe" kind="show" id="075-dL-3je"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopImageCell" rowHeight="216" id="8fk-UB-GyN" customClass="NewsCell" customModule="FakeNews" customModuleProvider="target">
@@ -325,6 +327,7 @@
                                 <connections>
                                     <outlet property="imgIcon" destination="m71-F7-QIK" id="Usm-Jv-e30"/>
                                     <outlet property="titleLabel" destination="mtc-pM-ofY" id="2Es-Gp-ZSk"/>
+                                    <segue destination="rMs-nV-eOe" kind="show" id="0mK-8C-B8w"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -340,6 +343,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wM-5d-XEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1583.5" y="-927"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="a9d-EO-TRO">
+            <objects>
+                <viewController id="rMs-nV-eOe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SlP-Sp-DDn"/>
+                        <viewControllerLayoutGuide type="bottom" id="llz-ew-amL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2i9-q9-miM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pw9-A5-R7G">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-pP-5y4">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="5su-Gr-P3M"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Omz-xj-dHJ"/>
+                                            <constraint firstAttribute="height" constant="35" id="hU4-QQ-2fx"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="par-qM-x0U"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="night_icon_back">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oA3-Xq-z05">
+                                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="6Vi-nJ-1F9"/>
+                                            <constraint firstAttribute="height" constant="1" id="KwX-AN-Uoy"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwo-pL-YSu">
+                                        <rect key="contentStretch" x="0.5" y="0.5" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="7Ye-Ho-Lum"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="DWO-Q7-KFB"/>
+                                            <constraint firstAttribute="height" constant="35" id="Ynr-CF-RIO"/>
+                                            <constraint firstAttribute="width" constant="80" id="bre-yB-t0y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <state key="normal" title="0 跟帖" backgroundImage="contentview_commentbacky">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Gwo-pL-YSu" secondAttribute="trailing" id="28j-Lo-vbb"/>
+                                    <constraint firstItem="oA3-Xq-z05" firstAttribute="leading" secondItem="Pw9-A5-R7G" secondAttribute="leading" id="8zp-90-vw6"/>
+                                    <constraint firstItem="M1e-pP-5y4" firstAttribute="leading" secondItem="Pw9-A5-R7G" secondAttribute="leading" id="M34-Zl-0p3"/>
+                                    <constraint firstAttribute="bottom" secondItem="oA3-Xq-z05" secondAttribute="bottom" id="Sj0-cl-yFX"/>
+                                    <constraint firstItem="M1e-pP-5y4" firstAttribute="top" secondItem="Pw9-A5-R7G" secondAttribute="top" constant="12" id="lSc-U3-xPD"/>
+                                    <constraint firstAttribute="trailing" secondItem="oA3-Xq-z05" secondAttribute="trailing" id="mlo-ia-zm4"/>
+                                    <constraint firstAttribute="height" constant="55" id="uCZ-vy-VFv"/>
+                                    <constraint firstItem="Gwo-pL-YSu" firstAttribute="top" secondItem="Pw9-A5-R7G" secondAttribute="top" constant="19" id="xtP-cx-nPn"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WqK-Xs-vyf">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WqK-Xs-vyf" secondAttribute="trailing" id="EsH-8D-6tN"/>
+                            <constraint firstAttribute="trailing" secondItem="Pw9-A5-R7G" secondAttribute="trailing" id="FJT-8V-Iw6"/>
+                            <constraint firstItem="llz-ew-amL" firstAttribute="top" secondItem="WqK-Xs-vyf" secondAttribute="bottom" constant="54" id="Hw9-6P-e94"/>
+                            <constraint firstItem="Pw9-A5-R7G" firstAttribute="leading" secondItem="2i9-q9-miM" secondAttribute="leading" id="NHp-ts-dXI"/>
+                            <constraint firstItem="WqK-Xs-vyf" firstAttribute="leading" secondItem="2i9-q9-miM" secondAttribute="leading" id="Ygb-Th-iZf"/>
+                            <constraint firstItem="Pw9-A5-R7G" firstAttribute="top" secondItem="2i9-q9-miM" secondAttribute="top" id="oRD-2r-OB7"/>
+                            <constraint firstItem="WqK-Xs-vyf" firstAttribute="top" secondItem="Pw9-A5-R7G" secondAttribute="bottom" constant="-2" id="od9-Qb-a6B"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uea-tO-LRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634.39999999999998" y="-281.55922038980509"/>
         </scene>
         <!--PhotoSet-->
         <scene sceneID="KKC-tr-7pn">
@@ -480,12 +563,14 @@
         <image name="contentview_commentbacky" width="29" height="44"/>
         <image name="icon_star" width="30" height="30"/>
         <image name="night_cola_bubble_gray" width="15" height="15"/>
+        <image name="night_icon_back" width="54" height="44"/>
         <image name="night_photoset_list_cell_icon" width="16" height="16"/>
         <image name="top_navigation_more" width="30" height="30"/>
         <image name="weather_back" width="50" height="50"/>
         <image name="weather_share" width="45" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MgC-ZU-fNG"/>
         <segue reference="JEZ-OG-di3"/>
     </inferredMetricsTieBreakers>
 </document>
