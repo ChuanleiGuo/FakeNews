@@ -565,10 +565,10 @@
             </objects>
             <point key="canvasLocation" x="-634.39999999999998" y="-1262.5187406296852"/>
         </scene>
-        <!--View Controller-->
+        <!--Reply Page-->
         <scene sceneID="0qP-n9-cs2">
             <objects>
-                <viewController id="E5p-hD-6nc" sceneMemberID="viewController">
+                <viewController id="E5p-hD-6nc" customClass="ReplyPage" customModule="FakeNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K4b-6C-JYf"/>
                         <viewControllerLayoutGuide type="bottom" id="6ds-IS-iZL"/>
@@ -608,7 +608,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="31w-xt-bn0">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReplyCell" rowHeight="81" id="jrC-gc-1PF" customClass="SXReplyCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReplyCell" rowHeight="81" id="jrC-gc-1PF" customClass="ReplyCell" customModule="FakeNews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jrC-gc-1PF" id="HKl-8i-lfM">
