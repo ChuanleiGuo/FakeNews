@@ -679,13 +679,17 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="addressLabel" destination="dOh-5m-skF" id="Gq6-ij-aen"/>
-                                            <outlet property="nameLabel" destination="GD0-Tq-swP" id="J17-Cr-oXq"/>
-                                            <outlet property="sayLabel" destination="hsw-CI-21w" id="p5c-oC-CHc"/>
-                                            <outlet property="supposeLabel" destination="RB9-xe-jVM" id="hyD-IY-5uF"/>
+                                            <outlet property="addressLabel" destination="dOh-5m-skF" id="taG-iC-kPR"/>
+                                            <outlet property="nameLabel" destination="GD0-Tq-swP" id="q4C-ff-oYM"/>
+                                            <outlet property="sayLabel" destination="hsw-CI-21w" id="AEi-mq-9Np"/>
+                                            <outlet property="supposeLabel" destination="RB9-xe-jVM" id="l5F-Yp-nHJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="E5p-hD-6nc" id="my3-vp-i1X"/>
+                                    <outlet property="delegate" destination="E5p-hD-6nc" id="qhO-fK-NkM"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -699,6 +703,9 @@
                             <constraint firstAttribute="trailing" secondItem="31w-xt-bn0" secondAttribute="trailing" id="uyw-Lz-5W0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="31w-xt-bn0" id="Lf4-mS-b2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OA-3d-2dE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -720,6 +727,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="JEZ-OG-di3"/>
         <segue reference="MgC-ZU-fNG"/>
-        <segue reference="3ja-ow-HR6"/>
+        <segue reference="4u0-wa-v43"/>
     </inferredMetricsTieBreakers>
 </document>
