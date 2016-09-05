@@ -26,6 +26,7 @@ class PhotoSetPage: UIViewController, UIScrollViewDelegate {
         }
     }
     var photoSet: PhotoSetEntity!
+    var replyModel: ReplyEntity!
     
     private lazy var news: Array<[String: String]>! = {
         guard let filePath = Bundle.main.path(forResource: "NewsURLs.plist", ofType: nil) else {
@@ -36,6 +37,13 @@ class PhotoSetPage: UIViewController, UIScrollViewDelegate {
     
     private lazy var viewModel: PhotoSetViewModel = {
         return PhotoSetViewModel()
+    }()
+    
+    private lazy var replyNormalModels: [ReplyEntity] = {
+        return [ReplyEntity]()
+    }()
+    private lazy var replyModels: [ReplyEntity] = {
+        return [ReplyEntity]()
     }()
     
     // MARK: - View Life Cycle
@@ -67,6 +75,15 @@ class PhotoSetPage: UIViewController, UIScrollViewDelegate {
     @IBAction func returnBtnClicked(_ sender: UIButton) {
         navigationController!.popViewController(animated: true)
         navigationController!.setNavigationBarHidden(false, animated: true)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let replyvc = segue.destination as! ReplyPage
+        replyvc.source = .photoSet
+        replyvc.newsModel = newsModel
+        replyvc.photoSetId = photoSet.postid
     }
     
     // MARK: - Private Methods

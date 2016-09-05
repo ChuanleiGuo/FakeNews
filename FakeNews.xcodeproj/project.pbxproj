@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		620C9DEB1D7043CB0080A4FD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C9DEA1D7043CB0080A4FD /* WeatherViewModel.swift */; };
+		620D6BB31D7D4ECD00417B90 /* ReplyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620D6BB21D7D4ECD00417B90 /* ReplyViewModel.swift */; };
+		620D6BB61D7D661000417B90 /* FDTemplateLayoutCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620D6BB51D7D661000417B90 /* FDTemplateLayoutCell.framework */; };
 		622FC6031D7447D100DF01E0 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622FC6021D7447D100DF01E0 /* News.storyboard */; };
 		622FC6071D74488500DF01E0 /* NewsTableViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622FC6061D74488500DF01E0 /* NewsTableViewPage.swift */; };
 		622FC6091D74490600DF01E0 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622FC6081D74490600DF01E0 /* NewsCell.swift */; };
@@ -65,6 +67,8 @@
 
 /* Begin PBXFileReference section */
 		620C9DEA1D7043CB0080A4FD /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewModel.swift; path = Weather/WeatherViewModel.swift; sourceTree = "<group>"; };
+		620D6BB21D7D4ECD00417B90 /* ReplyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplyViewModel.swift; path = Reply/ReplyViewModel.swift; sourceTree = "<group>"; };
+		620D6BB51D7D661000417B90 /* FDTemplateLayoutCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FDTemplateLayoutCell.framework; path = Carthage/Build/iOS/FDTemplateLayoutCell.framework; sourceTree = "<group>"; };
 		622FC6021D7447D100DF01E0 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = News.storyboard; path = News/News.storyboard; sourceTree = "<group>"; };
 		622FC6061D74488500DF01E0 /* NewsTableViewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewPage.swift; path = News/NewsTableViewPage.swift; sourceTree = "<group>"; };
 		622FC6081D74490600DF01E0 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsCell.swift; path = News/NewsCell.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				62A8BCEE1D756F740001FA04 /* ReactiveCocoa.framework in Frameworks */,
 				62A8BCEF1D756F740001FA04 /* Result.framework in Frameworks */,
 				62A8BCF11D7586C60001FA04 /* WebImage.framework in Frameworks */,
+				620D6BB61D7D661000417B90 /* FDTemplateLayoutCell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +145,14 @@
 			isa = PBXGroup;
 			children = (
 				620C9DEA1D7043CB0080A4FD /* WeatherViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		620D6BB41D7D4ED200417B90 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				620D6BB21D7D4ECD00417B90 /* ReplyViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -239,6 +252,7 @@
 			children = (
 				6267416D1D7C3CDF009415B6 /* Page */,
 				6267416C1D7C3A66009415B6 /* Entity */,
+				620D6BB41D7D4ED200417B90 /* ViewModel */,
 			);
 			name = Reply;
 			sourceTree = "<group>";
@@ -265,6 +279,7 @@
 		6271AC381D754E2D00F8B141 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				620D6BB51D7D661000417B90 /* FDTemplateLayoutCell.framework */,
 				62A8BCF01D7586C60001FA04 /* WebImage.framework */,
 				62A8BCEC1D756F740001FA04 /* ReactiveCocoa.framework */,
 				62A8BCED1D756F740001FA04 /* Result.framework */,
@@ -500,6 +515,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MJExtension.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FDTemplateLayoutCell.framework",
 			);
 			outputPaths = (
 			);
@@ -541,6 +557,7 @@
 				6275BF091D609A1200F0B6BA /* TitleLabel.swift in Sources */,
 				626741751D7C410D009415B6 /* ReplyCell.swift in Sources */,
 				626741661D7C305E009415B6 /* SimilarNewsEntity.swift in Sources */,
+				620D6BB31D7D4ECD00417B90 /* ReplyViewModel.swift in Sources */,
 				6275BF081D609A1200F0B6BA /* TabBar.swift in Sources */,
 				62EF588B1D61EA780014EFAB /* MainViewController.swift in Sources */,
 			);

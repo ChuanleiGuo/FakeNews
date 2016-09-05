@@ -14,8 +14,8 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzG-xb-k9M">
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="8DM-Gd-yii"/>
-                        <constraint firstAttribute="height" constant="40" id="GXA-6K-GNG"/>
+                        <constraint firstAttribute="width" constant="80" id="CwB-2s-eva"/>
+                        <constraint firstAttribute="height" constant="40" id="yFb-JI-QZx"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="热门评论" backgroundImage="contentview_commentbacky">
@@ -24,10 +24,9 @@
                     </state>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="DzG-xb-k9M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SDG-r7-qUY"/>
-                <constraint firstItem="DzG-xb-k9M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="W9J-ao-P2r"/>
+                <constraint firstItem="DzG-xb-k9M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QR6-uy-M1e"/>
+                <constraint firstItem="DzG-xb-k9M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wl6-hA-74O"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-14" y="-79"/>
@@ -38,8 +37,8 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVj-hD-24o">
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="UD6-j5-umk"/>
-                        <constraint firstAttribute="height" constant="40" id="fLz-ZA-3hI"/>
+                        <constraint firstAttribute="width" constant="80" id="GZB-aH-X8w"/>
+                        <constraint firstAttribute="height" constant="40" id="dsk-dv-yqN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="最新评论" backgroundImage="contentview_commentbacky">
@@ -48,10 +47,9 @@
                     </state>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="eVj-hD-24o" firstAttribute="leading" secondItem="b5h-HA-bbz" secondAttribute="leading" id="N8b-7F-5vU"/>
-                <constraint firstItem="eVj-hD-24o" firstAttribute="top" secondItem="b5h-HA-bbz" secondAttribute="top" id="WsA-FS-tRn"/>
+                <constraint firstItem="eVj-hD-24o" firstAttribute="leading" secondItem="b5h-HA-bbz" secondAttribute="leading" id="Szb-7T-aCa"/>
+                <constraint firstItem="eVj-hD-24o" firstAttribute="top" secondItem="b5h-HA-bbz" secondAttribute="top" id="jRD-JM-jwR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-15" y="47"/>
