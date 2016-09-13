@@ -347,7 +347,7 @@
         <!--新闻详情-->
         <scene sceneID="a9d-EO-TRO">
             <objects>
-                <viewController id="rMs-nV-eOe" sceneMemberID="viewController">
+                <viewController id="rMs-nV-eOe" customClass="DetailPage" customModule="FakeNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SlP-Sp-DDn"/>
                         <viewControllerLayoutGuide type="bottom" id="llz-ew-amL"/>
@@ -409,6 +409,10 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WqK-Xs-vyf">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rMs-nV-eOe" id="ODz-sC-m6Z"/>
+                                    <outlet property="delegate" destination="rMs-nV-eOe" id="Kh9-Yf-YrW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -423,6 +427,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="新闻详情" id="tOV-aC-eCD"/>
+                    <connections>
+                        <outlet property="backBtn" destination="M1e-pP-5y4" id="OrV-q2-ppE"/>
+                        <outlet property="replyCountBtn" destination="Gwo-pL-YSu" id="TAe-Yh-Msf"/>
+                        <outlet property="tableView" destination="WqK-Xs-vyf" id="ge7-o9-mvE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uea-tO-LRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
