@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Nj-7B-N2x" id="AQy-zF-ORt">
-                <frame key="frameInset" width="375" height="125.5"/>
+                <frame key="frameInset" width="375" height="125"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_share" translatesAutoresizingMaskIntoConstraints="NO" id="yiG-ag-kmW"/>
@@ -256,83 +256,6 @@
             </connections>
             <point key="canvasLocation" x="87" y="297"/>
         </tableViewCell>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="pDJ-GH-gGl" customClass="NewsDetailBottomCell" customModule="FakeNews" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pDJ-GH-gGl" id="3Mb-3L-RvA">
-                <frame key="frameInset" width="375" height="63"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上拉关闭当前页" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzC-L8-qP7">
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newscontent_drag_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="yfW-96-RQK">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="26" id="AZi-0e-oVF"/>
-                            <constraint firstAttribute="width" constant="26" id="V0A-8w-vQf"/>
-                        </constraints>
-                    </imageView>
-                </subviews>
-                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                <constraints>
-                    <constraint firstItem="yfW-96-RQK" firstAttribute="centerY" secondItem="AzC-L8-qP7" secondAttribute="centerY" id="5Sn-0a-7Ku"/>
-                    <constraint firstItem="AzC-L8-qP7" firstAttribute="leading" secondItem="yfW-96-RQK" secondAttribute="trailing" constant="10" id="Kap-Q2-qWY"/>
-                    <constraint firstItem="AzC-L8-qP7" firstAttribute="centerX" secondItem="3Mb-3L-RvA" secondAttribute="centerX" id="N9P-JY-V3R"/>
-                    <constraint firstItem="AzC-L8-qP7" firstAttribute="centerY" secondItem="3Mb-3L-RvA" secondAttribute="centerY" constant="10" id="bYZ-yv-6Pp"/>
-                </constraints>
-            </tableViewCellContentView>
-            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <connections>
-                <outlet property="closeImg" destination="yfW-96-RQK" id="eHY-XB-Mke"/>
-                <outlet property="closeLabel" destination="AzC-L8-qP7" id="ouV-AK-2lF"/>
-            </connections>
-            <point key="canvasLocation" x="88.5" y="584"/>
-        </tableViewCell>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="HBv-Hc-gZS" customClass="NewsDetailBottomCell" customModule="FakeNews" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBv-Hc-gZS" id="SJt-Zp-puz">
-                <frame key="frameInset" width="375" height="59"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkW-rL-7jz">
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XP-sv-ra7" userLabel="左边线">
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="0.5" id="BEo-fj-8fU"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyW-3b-NEP" userLabel="左边线">
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="0.5" id="ljt-NS-VSE"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="fyW-3b-NEP" secondAttribute="bottom" id="77y-1l-kgY"/>
-                            <constraint firstAttribute="bottom" secondItem="7XP-sv-ra7" secondAttribute="bottom" id="NDC-de-g24"/>
-                            <constraint firstItem="7XP-sv-ra7" firstAttribute="top" secondItem="lkW-rL-7jz" secondAttribute="top" id="VeA-hs-M0i"/>
-                            <constraint firstItem="fyW-3b-NEP" firstAttribute="top" secondItem="lkW-rL-7jz" secondAttribute="top" id="juL-Z8-ehu"/>
-                            <constraint firstAttribute="trailing" secondItem="fyW-3b-NEP" secondAttribute="trailing" id="mYS-Ed-mLv"/>
-                            <constraint firstItem="7XP-sv-ra7" firstAttribute="leading" secondItem="lkW-rL-7jz" secondAttribute="leading" id="nYr-XR-tvB"/>
-                        </constraints>
-                    </view>
-                </subviews>
-                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                <constraints>
-                    <constraint firstItem="lkW-rL-7jz" firstAttribute="leading" secondItem="SJt-Zp-puz" secondAttribute="leading" constant="10" id="5Iy-oH-44u"/>
-                    <constraint firstAttribute="bottom" secondItem="lkW-rL-7jz" secondAttribute="bottom" id="fXT-Iw-SJW"/>
-                    <constraint firstAttribute="trailing" secondItem="lkW-rL-7jz" secondAttribute="trailing" constant="10" id="j0t-Kx-Six"/>
-                    <constraint firstItem="lkW-rL-7jz" firstAttribute="top" secondItem="SJt-Zp-puz" secondAttribute="top" id="uJA-fP-sxi"/>
-                </constraints>
-            </tableViewCellContentView>
-            <point key="canvasLocation" x="88" y="687"/>
-        </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="82" id="1o8-ua-GUE" customClass="NewsDetailBottomCell" customModule="FakeNews" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
             <autoresizingMask key="autoresizingMask"/>
@@ -421,6 +344,83 @@
                 <outlet property="newsTitleLabel" destination="8tK-A3-luF" id="Ys2-hc-xSr"/>
             </connections>
             <point key="canvasLocation" x="86.5" y="456"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="pDJ-GH-gGl" customClass="NewsDetailBottomCell" customModule="FakeNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pDJ-GH-gGl" id="3Mb-3L-RvA">
+                <frame key="frameInset" width="375" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上拉关闭当前页" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzC-L8-qP7">
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newscontent_drag_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="yfW-96-RQK">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="AZi-0e-oVF"/>
+                            <constraint firstAttribute="width" constant="26" id="V0A-8w-vQf"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="yfW-96-RQK" firstAttribute="centerY" secondItem="AzC-L8-qP7" secondAttribute="centerY" id="5Sn-0a-7Ku"/>
+                    <constraint firstItem="AzC-L8-qP7" firstAttribute="leading" secondItem="yfW-96-RQK" secondAttribute="trailing" constant="10" id="Kap-Q2-qWY"/>
+                    <constraint firstItem="AzC-L8-qP7" firstAttribute="centerX" secondItem="3Mb-3L-RvA" secondAttribute="centerX" id="N9P-JY-V3R"/>
+                    <constraint firstItem="AzC-L8-qP7" firstAttribute="centerY" secondItem="3Mb-3L-RvA" secondAttribute="centerY" constant="10" id="bYZ-yv-6Pp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="closeImg" destination="yfW-96-RQK" id="eHY-XB-Mke"/>
+                <outlet property="closeLabel" destination="AzC-L8-qP7" id="ouV-AK-2lF"/>
+            </connections>
+            <point key="canvasLocation" x="88.5" y="584"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="HBv-Hc-gZS" customClass="NewsDetailBottomCell" customModule="FakeNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBv-Hc-gZS" id="SJt-Zp-puz">
+                <frame key="frameInset" width="375" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkW-rL-7jz">
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XP-sv-ra7" userLabel="左边线">
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="0.5" id="BEo-fj-8fU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyW-3b-NEP" userLabel="左边线">
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="0.5" id="ljt-NS-VSE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fyW-3b-NEP" secondAttribute="bottom" id="77y-1l-kgY"/>
+                            <constraint firstAttribute="bottom" secondItem="7XP-sv-ra7" secondAttribute="bottom" id="NDC-de-g24"/>
+                            <constraint firstItem="7XP-sv-ra7" firstAttribute="top" secondItem="lkW-rL-7jz" secondAttribute="top" id="VeA-hs-M0i"/>
+                            <constraint firstItem="fyW-3b-NEP" firstAttribute="top" secondItem="lkW-rL-7jz" secondAttribute="top" id="juL-Z8-ehu"/>
+                            <constraint firstAttribute="trailing" secondItem="fyW-3b-NEP" secondAttribute="trailing" id="mYS-Ed-mLv"/>
+                            <constraint firstItem="7XP-sv-ra7" firstAttribute="leading" secondItem="lkW-rL-7jz" secondAttribute="leading" id="nYr-XR-tvB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="lkW-rL-7jz" firstAttribute="leading" secondItem="SJt-Zp-puz" secondAttribute="leading" constant="10" id="5Iy-oH-44u"/>
+                    <constraint firstAttribute="bottom" secondItem="lkW-rL-7jz" secondAttribute="bottom" id="fXT-Iw-SJW"/>
+                    <constraint firstAttribute="trailing" secondItem="lkW-rL-7jz" secondAttribute="trailing" constant="10" id="j0t-Kx-Six"/>
+                    <constraint firstItem="lkW-rL-7jz" firstAttribute="top" secondItem="SJt-Zp-puz" secondAttribute="top" id="uJA-fP-sxi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="88" y="687"/>
         </tableViewCell>
     </objects>
     <resources>

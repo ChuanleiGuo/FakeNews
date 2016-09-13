@@ -347,7 +347,7 @@
         <!--新闻详情-->
         <scene sceneID="a9d-EO-TRO">
             <objects>
-                <viewController id="rMs-nV-eOe" customClass="DetailPage" customModule="FakeNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailPage" id="rMs-nV-eOe" customClass="DetailPage" customModule="FakeNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SlP-Sp-DDn"/>
                         <viewControllerLayoutGuide type="bottom" id="llz-ew-amL"/>
@@ -368,6 +368,9 @@
                                         <state key="normal" backgroundImage="night_icon_back">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backBtnClicked:" destination="rMs-nV-eOe" eventType="touchUpInside" id="O8d-c5-tDd"/>
+                                        </connections>
                                     </button>
                                     <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oA3-Xq-z05">
                                         <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

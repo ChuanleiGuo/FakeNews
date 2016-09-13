@@ -33,4 +33,45 @@ class NewsDetailBottomCell: UITableViewCell {
     
     @IBOutlet weak var closeImg: UIImageView!
     @IBOutlet weak var closeLabel: UILabel!
+    
+    // MAKR: - Cell
+    
+    
+    private static let nibFileName = "NewsDetailBottomCell"
+    
+    class func theShareCell() -> NewsDetailBottomCell {
+        return Bundle.main.loadNibNamed(nibFileName, owner: nil, options: nil)![0] as! NewsDetailBottomCell
+    }
+    
+    class func theSectionHeaderCell() -> NewsDetailBottomCell {
+        return Bundle.main.loadNibNamed(nibFileName, owner: nil, options: nil)![1] as! NewsDetailBottomCell
+    }
+    
+    class func theSectionBottomCell() -> NewsDetailBottomCell {
+        return Bundle.main.loadNibNamed(nibFileName, owner: nil, options: nil)![2] as! NewsDetailBottomCell
+    }
+    
+    class func theHotReplyCell(withTableView tableView: UITableView) -> NewsDetailBottomCell {
+        let id = "horreplycell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: id) as? NewsDetailBottomCell else {
+            let cell = Bundle.main.loadNibNamed(nibFileName, owner: nil, options: nil)![3] as! NewsDetailBottomCell
+            return cell
+        }
+        
+        return cell
+    }
+    
+    class func theContactNewsCell() -> NewsDetailBottomCell {
+        return Bundle.main.loadNibNamed(nibFileName, owner: nil, options: nil)![4] as! NewsDetailBottomCell
+    }
+    
+    class func theCloseCell() -> NewsDetailBottomCell {
+        return Bundle.main.loadNibNamed(nibFileName, owner: nil, options: nil)![5] as! NewsDetailBottomCell
+    }
+    
+    class func theKeywordCell() -> NewsDetailBottomCell {
+        return Bundle.main.loadNibNamed(nibFileName, owner: nil, options: nil)![6] as! NewsDetailBottomCell
+    }
+    
 }
