@@ -23,8 +23,8 @@ class ReplyViewModel {
     var replyModels: [ReplyEntity] = []
     var replyNormalModels: [ReplyEntity] = []
     
-    var fetchHotReplyCommand: RACCommand<AnyObject>!
-    var fetchNormalReplyCommand: RACCommand<AnyObject>!
+    var fetchHotReplyCommand: RACCommand!
+    var fetchNormalReplyCommand: RACCommand!
     
     init() {
         setupRACCommand()
@@ -52,11 +52,11 @@ class ReplyViewModel {
                         }
                         
                         self.replyModels = tempReplyModels
-                        subscriber.sendNext(tempReplyModels)
-                        subscriber.sendCompleted()
+                        subscriber?.sendNext(tempReplyModels)
+                        subscriber?.sendCompleted()
                     }
                 }, failure: { (error) in
-                    subscriber.sendError(error)
+                    subscriber?.sendError(error)
                 })
                 
                 return nil
@@ -81,11 +81,11 @@ class ReplyViewModel {
                         }
                         
                         self.replyNormalModels = tempPosts
-                        subscriber.sendNext(tempPosts)
-                        subscriber.sendCompleted()
+                        subscriber?.sendNext(tempPosts)
+                        subscriber?.sendCompleted()
                     }
                 }, failure: { (error) in
-                    subscriber.sendError(error)
+                    subscriber?.sendError(error)
                 })
                 
                 return nil

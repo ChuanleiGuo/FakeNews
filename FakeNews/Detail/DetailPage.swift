@@ -69,10 +69,21 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
         
         viewModel.fetchNewsDetailCommand.execute(nil).subscribeError({ (error) in
-            
+            print(error)
         }, completed: {
             self.showInWebView()
             self.requestForFeedbackList()
+        })
+        
+        let signals: NSArray = [viewModel.fetchHotFeedbackCommand.executing.skip(1), viewModel.fetchNewsDetailCommand.executing.skip(1)]
+        let signal = RACSignal.combineLatest(signals).filter { (x) -> Bool in
+            if let x  = x as? RACTuple {
+                return (!(x.first as! NSNumber).boolValue) && (!(x.last as! NSNumber).boolValue)
+            }
+            return false
+        }
+        signal?.subscribeNext({ [unowned self] (x) in
+            self.tableView.reloadData()
         })
         
         automaticallyAdjustsScrollViewInsets = false
@@ -97,7 +108,7 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         let url = request.url!.absoluteString
         if let range = url.range(of: "sx:") {
-            showPicture(url: url)
+            //showPicture(url: url)
             return false
         }
         return true
@@ -185,8 +196,8 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
         } else if indexPath.section == 2 {
             if indexPath.row > 0 {
-                let model = NewsEntity()
-                model.docid = viewModel.sameNews[indexPath.row].docid
+                var model = NewsEntity()
+                //model.docid = viewModel.sameNews[indexPath.row].docid
                 
                 let sb = UIStoryboard(name: "News", bundle: nil)
                 let devc = sb.instantiateViewController(withIdentifier: "SXDetailPage") as! DetailPage
@@ -197,6 +208,94 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            return NewsDetailBottomCell.theShareCell()
+        } else if indexPath.section == 1 {
+            if indexPath.row == viewModel.replyModels.count {
+                let foot = NewsDetailBottomCell.theSectionBottomCell()
+                return foot
+            } else {
+                let hotReply = NewsDetailBottomCell.theHotReplyCell(withTableView: tableView)
+                hotReply.replyModel = viewModel.replyModels[indexPath.row]
+                return hotReply
+            }
+        } else if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                let cell = NewsDetailBottomCell.theKeywordCell()
+                cell.contentView.addSubview(addKeywordButton())
+                return cell
+            } else {
+                let other = NewsDetailBottomCell.theContactNewsCell()
+                other.sameNewsEntity = viewModel.sameNews[indexPath.row]
+                return other
+            }
+        }
+        
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 126
+        } else if indexPath.section == 1 {
+            if indexPath.row == viewModel.replyModels.count {
+                return 50
+            } else {
+                return 110.5
+            }
+        } else if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                return 60
+            } else {
+                return 81
+            }
+        }
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 126
+        } else if indexPath.section == 1 {
+            if indexPath.row == viewModel.replyModels.count {
+                return 50
+            } else {
+                return 110.5
+            }
+        } else if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                return 60
+            } else {
+                return 81
+            }
+        }
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    // MARK: - Private Methods
+    
+    private func requestForFeedbackList() {
+        viewModel.fetchHotFeedbackCommand.execute(nil)
+    }
+    
+    private func addKeywordButton() -> UIView {
+        var maxRight: CGFloat = 20
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 60))
+        for i in 0..<viewModel.keywordSearch.count {
+            let button = UIButton(frame: CGRect(x: maxRight, y: 10, width: 0, height: 0))
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            button.setTitleColor(UIColor(red: 74, green: 133, blue: 198, alpha: 1.0),
+                                 for: .normal)
+            //button.setTitle(viewModel.keywordSearch[i]["word"], for: .highlighted)
+            button.setBackgroundImage(UIImage(named: "choose_city_normal"), for: .normal)
+            button.setBackgroundImage(UIImage(named: "choose_city_highlight"), for: .highlighted)
+            button.sizeToFit()
+            button.width += 20
+            button.height = 35
+            
+            maxRight = button.x + button.width + 10
+            view.addSubview(button)
+        }
+        return view
     }
 }

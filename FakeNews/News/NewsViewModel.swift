@@ -11,7 +11,7 @@ import MJExtension
 import ReactiveCocoa
 
 class NewsViewModel {
-    var fetchNewsEntityCommand: RACCommand<AnyObject>!
+    var fetchNewsEntityCommand: RACCommand!
     
     init() {
         setupRACCommand()
@@ -25,10 +25,10 @@ class NewsViewModel {
                 if let input = input as? String {
                     self.requestForNewsEntity(withURL: input, success: { (array) in
                         let arrayM = NewsEntity.mj_objectArray(withKeyValuesArray: array)
-                        subscriber.sendNext(arrayM)
-                        subscriber.sendCompleted()
+                        subscriber?.sendNext(arrayM)
+                        subscriber?.sendCompleted()
                     }, failure: { (error) in
-                        subscriber.sendError(error)
+                        subscriber?.sendError(error)
                     })
                 }
                 

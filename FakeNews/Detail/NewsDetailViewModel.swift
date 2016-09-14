@@ -19,13 +19,13 @@ class NewsDetailViewModel {
         }
     }
     
-    var sameNews: [NewsEntity] = []
+    var sameNews: [SimilarNewsEntity] = []
     var keywordSearch: [String] = []
     var replyModels: [ReplyEntity] = []
     var replyCountBtnTitle: String = ""
     
-    var fetchNewsDetailCommand: RACCommand<AnyObject>!
-    var fetchHotFeedbackCommand: RACCommand<AnyObject>!
+    var fetchNewsDetailCommand: RACCommand!
+    var fetchHotFeedbackCommand: RACCommand!
     
     private lazy var replyViewModel: ReplyViewModel = {
         let rvm = ReplyViewModel()
@@ -51,7 +51,7 @@ class NewsDetailViewModel {
                             self.newsModel.boardid = self.detailModel.replyBoard
                         }
                         self.newsModel.replyCount = self.detailModel.replyCount as NSNumber
-                        self.sameNews = (SimilarNewsEntity.mj_objectArray(withKeyValuesArray: sameNews) as NSArray) as! [NewsEntity]
+                        self.sameNews = (SimilarNewsEntity.mj_objectArray(withKeyValuesArray: sameNews) as NSArray) as! [SimilarNewsEntity]
                         self.keywordSearch = keyWords
                         
                         let count = Float(self.newsModel.replyCount.intValue)
@@ -61,11 +61,11 @@ class NewsDetailViewModel {
                             self.replyCountBtnTitle = String(format: "%.0f跟帖", count)
                         }
                         
-                        subscriber.sendNext(self.replyCountBtnTitle)
-                        subscriber.sendCompleted()
+                        subscriber?.sendNext(self.replyCountBtnTitle)
+                        subscriber?.sendCompleted()
                     }
                 }, failure: { (error) in
-                    subscriber.sendError(error)
+                    subscriber?.sendError(error)
                 })
                 
                 return nil
@@ -78,9 +78,9 @@ class NewsDetailViewModel {
                 self.replyViewModel.fetchHotReplyCommand.execute(nil).subscribeNext({ (x) in
                     self.replyModels = x as! [ReplyEntity]
                 }, error: { (error) in
-                    subscriber.sendError(error)
+                    subscriber?.sendError(error)
                 }, completed: {
-                    subscriber.sendCompleted()
+                    subscriber?.sendCompleted()
                 })
                 
                 return nil

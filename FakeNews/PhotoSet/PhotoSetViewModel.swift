@@ -15,7 +15,7 @@ class PhotoSetViewModel {
     
     var newsModel: NewsEntity!
     var replyCountBtnTitle: String!
-    var fetchPhotoSetCommand: RACCommand<AnyObject>!
+    var fetchPhotoSetCommand: RACCommand!
     var photoSet: PhotoSetEntity!
     
     init() {
@@ -31,10 +31,10 @@ class PhotoSetViewModel {
                 self.requestForPhotoSet(success: { (dict) in
                     let photoSet = PhotoSetEntity.mj_object(withKeyValues: dict)
                     self.photoSet = photoSet
-                    subscriber.sendNext(photoSet)
-                    subscriber.sendCompleted()
+                    subscriber?.sendNext(photoSet)
+                    subscriber?.sendCompleted()
                 }, failure: { (error) in
-                    subscriber.sendError(error)
+                    subscriber?.sendError(error)
                 })
                 return nil
             })

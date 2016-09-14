@@ -85,7 +85,12 @@ class NewsTableViewPage: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let x = tableView.indexPathForSelectedRow?.row {
+        if segue.destination is DetailPage, let x = tableView.indexPathForSelectedRow?.row {
+            let dc = segue.destination as! DetailPage
+            dc.newsModel = arrayList[x]
+            dc.index = self.index
+            
+        } else if let x = tableView.indexPathForSelectedRow?.row {
             let pc = segue.destination as! PhotoSetPage
             pc.newsModel = arrayList[x]
         }

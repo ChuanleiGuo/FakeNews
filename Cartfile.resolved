@@ -1,4 +1,4 @@
 github "CoderMJLee/MJExtension" "3.0.13"
 github "ReactiveCocoa/ReactiveCocoa" "v2.5"
-github "rs/SDWebImage" "3.8.1"
+github "rs/SDWebImage" "3.8.2"
 github "forkingdog/UITableView-FDTemplateLayoutCell" "1.4"
