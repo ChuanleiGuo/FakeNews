@@ -20,7 +20,8 @@ class NewsDetailViewModel {
     }
     
     var sameNews: [SimilarNewsEntity] = []
-    var keywordSearch: [String] = []
+    //var keywordSearch: [String] = []
+    var keywordSearch: Array<[String: String]> = []
     var replyModels: [ReplyEntity] = []
     var replyCountBtnTitle: String = ""
     
@@ -42,17 +43,19 @@ class NewsDetailViewModel {
             [unowned self] (input) -> RACSignal in
             return RACSignal.createSignal({ (subscriber) -> RACDisposable? in
                 self.requestForNewsDetail(success: { (result) in
-                    if let detail = result[self.newsModel.docid] as? [String: Any],
-                        let sameNews = detail["relative_sys"],
-                        let keyWords = detail["keyword_search"] as? [String] {
-                        
+                    if let detail = result[self.newsModel.docid] as? [String: Any] {
                         self.detailModel = NewsDetailEntity.detail(withDict: detail)
                         if self.newsModel.boardid.characters.count < 1 {
                             self.newsModel.boardid = self.detailModel.replyBoard
                         }
                         self.newsModel.replyCount = self.detailModel.replyCount as NSNumber
-                        self.sameNews = (SimilarNewsEntity.mj_objectArray(withKeyValuesArray: sameNews) as NSArray) as! [SimilarNewsEntity]
-                        self.keywordSearch = keyWords
+                        
+                        if let sameNews = detail["relative_sys"] as? [String: Any] {
+                            self.sameNews = (SimilarNewsEntity.mj_objectArray(withKeyValuesArray: sameNews) as NSArray) as! [SimilarNewsEntity]
+                        }
+                        if let keyWords = detail["keyword_search"] as? Array<[String: String]> {
+                            self.keywordSearch = keyWords
+                        }
                         
                         let count = Float(self.newsModel.replyCount.intValue)
                         if count > 10000 {
