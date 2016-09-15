@@ -50,8 +50,9 @@ class NewsDetailViewModel {
                         }
                         self.newsModel.replyCount = self.detailModel.replyCount as NSNumber
                         
-                        if let sameNews = detail["relative_sys"] as? [String: Any] {
-                            self.sameNews = (SimilarNewsEntity.mj_objectArray(withKeyValuesArray: sameNews) as NSArray) as! [SimilarNewsEntity]
+                        if let sameNews = detail["relative_sys"] as? Array<[String: String]> {
+                            self.sameNews = (SimilarNewsEntity.mj_objectArray(withKeyValuesArray: sameNews) as NSArray)
+                                as! [SimilarNewsEntity]
                         }
                         if let keyWords = detail["keyword_search"] as? Array<[String: String]> {
                             self.keywordSearch = keyWords

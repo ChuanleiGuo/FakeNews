@@ -76,7 +76,8 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             self.requestForFeedbackList()
         })
         
-        let signals: NSArray = [viewModel.fetchHotFeedbackCommand.executing.skip(1), viewModel.fetchNewsDetailCommand.executing.skip(1)]
+        let signals: NSArray = [viewModel.fetchHotFeedbackCommand.executing.skip(1),
+                                viewModel.fetchNewsDetailCommand.executing.skip(1)]
         (RACSignal.combineLatest(signals).filter { (x) -> Bool in
             if let x  = x as? RACTuple {
                 return (!(x.first as! NSNumber).boolValue) && (!(x.last as! NSNumber).boolValue)
