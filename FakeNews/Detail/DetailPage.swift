@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
+import WebImage
 
 fileprivate let SCREEN_WIDTH = UIScreen.main.bounds.width
 fileprivate let SCREEN_HEIGHT = UIScreen.main.bounds.height
@@ -26,6 +27,7 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     var bigImg: UIImageView!
     var hoverView: UIView!
     var closeCell: NewsDetailBottomCell!
+    var temImgPara: [String: String]!
     
     private var news: Array<[String: String]>! = {
         guard let filePath = Bundle.main.path(forResource: "NewsURLs.plist", ofType: nil) else {
@@ -48,7 +50,6 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var replyCountBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -76,13 +77,12 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         })
         
         let signals: NSArray = [viewModel.fetchHotFeedbackCommand.executing.skip(1), viewModel.fetchNewsDetailCommand.executing.skip(1)]
-        let signal = RACSignal.combineLatest(signals).filter { (x) -> Bool in
+        (RACSignal.combineLatest(signals).filter { (x) -> Bool in
             if let x  = x as? RACTuple {
                 return (!(x.first as! NSNumber).boolValue) && (!(x.last as! NSNumber).boolValue)
             }
             return false
-        }
-        signal?.subscribeNext({ [unowned self] (x) in
+        }).subscribeNext({ [unowned self] (x) in
             self.tableView.reloadData()
         })
         
@@ -107,8 +107,8 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         let url = request.url!.absoluteString
-        if let range = url.range(of: "sx:") {
-            //showPicture(url: url)
+        if url.range(of: "sx:") != nil {
+            showPicture(withAbsoluteUrl: url)
             return false
         }
         return true
@@ -130,8 +130,6 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                                                      object: nil, userInfo: nil))
     }
     
-    
-    
     // MAKR: - UITableViewDataSource, UITableViewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -144,8 +142,9 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         } else if section == 1 {
             let head = NewsDetailBottomCell.theSectionHeaderCell()
             head.sectionHeaderLabel.text = "热门跟贴"
+            return head
         } else if section == 2 {
-            let head = NewsDetailBottomCell.theSectionBottomCell()
+            let head = NewsDetailBottomCell.theSectionHeaderCell()
             head.sectionHeaderLabel.text = "相关新闻"
             return head
         }
@@ -196,8 +195,8 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
         } else if indexPath.section == 2 {
             if indexPath.row > 0 {
-                var model = NewsEntity()
-                //model.docid = viewModel.sameNews[indexPath.row].docid
+                let model = NewsEntity()
+                model.docid = viewModel.sameNews[indexPath.row].id
                 
                 let sb = UIStoryboard(name: "News", bundle: nil)
                 let devc = sb.instantiateViewController(withIdentifier: "SXDetailPage") as! DetailPage
@@ -286,7 +285,7 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             button.setTitleColor(UIColor(red: 74, green: 133, blue: 198, alpha: 1.0),
                                  for: .normal)
-            //button.setTitle(viewModel.keywordSearch[i]["word"], for: .highlighted)
+            button.setTitle(viewModel.keywordSearch[i]["word"], for: .highlighted)
             button.setBackgroundImage(UIImage(named: "choose_city_normal"), for: .normal)
             button.setBackgroundImage(UIImage(named: "choose_city_highlight"), for: .highlighted)
             button.sizeToFit()
@@ -297,5 +296,79 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             view.addSubview(button)
         }
         return view
+    }
+    
+    private func showPicture(withAbsoluteUrl url: String) {
+        view.isUserInteractionEnabled = false
+        let range = url.range(of: "github.com/dsxNiubility?")!
+        let path = range.upperBound
+        let tail = url.substring(from: path)
+        let keyValues = tail.components(separatedBy: "&")
+        var parameters = [String: String]()
+        for str in keyValues {
+            let keyValue = str.components(separatedBy: "=")
+            if keyValue.count == 2 {
+                parameters[keyValue[0]] = keyValue[1]
+            } else if keyValues.count > 2 {
+                if let range = str.range(of: "src=") {
+                    let value = str.substring(from: range.upperBound)
+                    parameters["src"] = value
+                }
+            }
+        }
+        temImgPara = parameters
+        let cache = URLCache.shared
+        if let srcPath = parameters["src"] {
+            let request = URLRequest(url: URL(string: srcPath)!)
+            
+            var imgView = UIImageView()
+            
+            if let imgData = cache.cachedResponse(for: request)?.data,
+                let image = UIImage(data: imgData) {
+                
+                var top: CGFloat = tableView.y - tableView.contentOffset.y
+                var height: CGFloat = 0.0
+                if let t = parameters["top"] {
+                    top  += CGFloat((t as NSString).floatValue)
+                }
+                
+                if let s = parameters["whscale"] {
+                    height = (SCREEN_WIDTH - 15) / CGFloat((s as NSString).floatValue)
+                }
+                
+                temImgPara["top"] = "\(top)"
+                temImgPara["height"] = "\(height)"
+                
+                imgView = UIImageView(image: image)
+                imgView.frame = CGRect(x: 8, y: top, width: SCREEN_WIDTH - 15, height: height)
+                bigImg = imgView
+                
+                hoverView.alpha = 0
+                navigationController!.view.addSubview(hoverView)
+                navigationController!.view.addSubview(imgView)
+            
+            } else {
+                imgView = UIImageView()
+                imgView.sd_setImage(with: URL(string: srcPath)!, completed: {
+                    (image, error, type, url) in
+                    self.moveToCenter()
+                })
+            }
+            moveToCenter()
+        }
+    }
+    
+    private func moveToCenter() {
+        let w: CGFloat = SCREEN_WIDTH
+        let h: CGFloat = SCREEN_WIDTH / CGFloat((temImgPara["whscale"]! as NSString).floatValue)
+        let x: CGFloat = 0
+        let y: CGFloat = (SCREEN_HEIGHT - h) / 2
+        
+        UIView.animate(withDuration: 0.5, animations: { 
+            self.hoverView.alpha = 1.0
+            self.bigImg.frame = CGRect(x: x, y: y, width: w, height: h)
+        }, completion: { finished in
+            self.view.isUserInteractionEnabled = true
+        })
     }
 }
