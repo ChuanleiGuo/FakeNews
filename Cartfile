@@ -1,4 +1,0 @@
-github "https://github.com/CoderMJLee/MJExtension.git"
-github "https://github.com/ReactiveCocoa/ReactiveCocoa.git" ~> 2.5
-github "rs/SDWebImage" ~> 3.8
-github "https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git"

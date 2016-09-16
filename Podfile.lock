@@ -1,0 +1,38 @@
+PODS:
+  - FDFullscreenPopGesture (1.1)
+  - Kingfisher (3.0.1)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SDWebImage (3.8.0):
+    - SDWebImage/Core (= 3.8.0)
+  - SDWebImage/Core (3.8.0)
+  - UITableView+FDTemplateLayoutCell (1.4)
+
+DEPENDENCIES:
+  - FDFullscreenPopGesture (= 1.1)
+  - Kingfisher (= 3.0.1)
+  - MJExtension
+  - MJRefresh
+  - ReactiveCocoa (= 2.5)
+  - SDWebImage (= 3.8)
+  - UITableView+FDTemplateLayoutCell
+
+SPEC CHECKSUMS:
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDWebImage: 7d9fe229266696de91eadf840c77ca15efd4bbd2
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+
+PODFILE CHECKSUM: 10b586b2dcc0cd84fd053e95412cc24d9e79d253
+
+COCOAPODS: 1.0.1
