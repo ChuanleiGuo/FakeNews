@@ -54,7 +54,6 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         webView.delegate = self
         hoverView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         hoverView.backgroundColor = UIColor.black
@@ -129,6 +128,35 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "contentStart"),
                                                      object: nil, userInfo: nil))
+    }
+    
+    // MARK: - UIScrollViewDelegate and Drag to Close
+    
+    private func newDetailControllerClose() -> Bool {
+        return tableView.contentOffset.y - (tableView.contentSize.height - SCREEN_HEIGHT + 55) > (100 - 54)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if closeCell != nil {
+            closeCell.isClosing = newDetailControllerClose()
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if newDetailControllerClose() {
+            let imgV = UIImageView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+            imgV.image = getImage()
+            let window = UIApplication.shared.keyWindow!
+            window.addSubview(imgV)
+            navigationController!.popViewController(animated: false)
+            imgV.alpha = 1.0
+            UIView.animate(withDuration: 0.3, animations: { 
+                imgV.frame = CGRect(x: 0, y: SCREEN_HEIGHT / 2, width: SCREEN_WIDTH, height: 0)
+                imgV.alpha = 0.0
+            }, completion: { finished in
+                imgV.removeFromSuperview()
+            })
+        }
     }
     
     // MAKR: - UITableViewDataSource, UITableViewDelegate
@@ -345,21 +373,45 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 bigImg = imgView
                 
                 hoverView.alpha = 0
-                navigationController!.view.addSubview(hoverView)
-                navigationController!.view.addSubview(imgView)
             
             } else {
-                imgView = UIImageView()
+                bigImg = imgView
                 imgView.sd_setImage(with: URL(string: srcPath)!, completed: {
                     (image, error, type, url) in
                     self.moveToCenter()
                 })
+                
             }
             moveToCenter()
+            
+            imgView.addTapAction(#selector(moveToOrigin), target: self)
         }
     }
     
+    @objc private func moveToOrigin() {
+        UIView.animate(withDuration: 0.5, animations: { 
+            self.hoverView.alpha = 0.0
+            if let t = self.temImgPara["top"], let h = self.temImgPara["height"] {
+                let y = CGFloat((t as NSString).floatValue)
+                let h = CGFloat((h as NSString).floatValue)
+                
+                self.hoverView.alpha = 0
+                self.bigImg.frame = CGRect(x: 0, y: y,
+                                           width: SCREEN_WIDTH - 15, height: h)
+            }
+            
+        }, completion: { finished in
+            self.hoverView.removeFromSuperview()
+            self.bigImg.removeFromSuperview()
+            self.bigImg = nil
+            
+        })
+    }
+    
     private func moveToCenter() {
+        navigationController!.view.addSubview(hoverView)
+        navigationController!.view.addSubview(bigImg)
+        
         let w: CGFloat = SCREEN_WIDTH
         let h: CGFloat = SCREEN_WIDTH / CGFloat((temImgPara["whscale"]! as NSString).floatValue)
         let x: CGFloat = 0
@@ -372,4 +424,13 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             self.view.isUserInteractionEnabled = true
         })
     }
+    
+    private func getImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: SCREEN_WIDTH, height: SCREEN_HEIGHT), false, 1.0)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img
+    }
+    
 }

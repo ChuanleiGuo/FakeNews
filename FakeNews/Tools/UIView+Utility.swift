@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Frame
+
 extension UIView {
     var x: CGFloat {
         get {
@@ -51,5 +53,15 @@ extension UIView {
             frame.size.height = newH
             self.frame = frame
         }
+    }
+}
+
+// MARK: - Gesture
+
+extension UIView {
+    func addTapAction(_ tapAction: Selector, target: AnyObject) {
+        isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: target, action: tapAction)
+        addGestureRecognizer(gesture)
     }
 }
