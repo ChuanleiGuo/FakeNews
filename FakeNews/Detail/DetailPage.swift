@@ -29,19 +29,19 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     var closeCell: NewsDetailBottomCell!
     var temImgPara: [String: String]!
     
-    private var news: Array<[String: String]>! = {
+    lazy private var news: Array<[String: String]>! = {
         guard let filePath = Bundle.main.path(forResource: "NewsURLs.plist", ofType: nil) else {
             return nil
         }
         return NSArray(contentsOfFile: filePath) as! Array<[String: String]>
     }()
     
-    private var webView: UIWebView = {
+    lazy private var webView: UIWebView = {
         let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 700))
         return webView
     }()
     
-    private var viewModel: NewsDetailViewModel = {
+    lazy private var viewModel: NewsDetailViewModel = {
         return NewsDetailViewModel()
     }()
     
@@ -83,6 +83,7 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
             return false
         }).subscribeNext({ [unowned self] (x) in
+            self.replyCountBtn.setTitle(self.viewModel.replyCountBtnTitle, for: .normal)
             self.tableView.reloadData()
         })
         
@@ -350,7 +351,9 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         if let srcPath = parameters["src"] {
             let request = URLRequest(url: URL(string: srcPath)!)
             
-            var imgView = UIImageView()
+            let imgView = UIImageView()
+            imgView.frame.origin = CGPoint(x: 8, y: 0)
+            bigImg = imgView
             
             if let imgData = cache.cachedResponse(for: request)?.data,
                 let image = UIImage(data: imgData) {
@@ -368,14 +371,12 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 temImgPara["top"] = "\(top)"
                 temImgPara["height"] = "\(height)"
                 
-                imgView = UIImageView(image: image)
+                imgView.image = image
                 imgView.frame = CGRect(x: 8, y: top, width: SCREEN_WIDTH - 15, height: height)
-                bigImg = imgView
                 
                 hoverView.alpha = 0
             
             } else {
-                bigImg = imgView
                 imgView.sd_setImage(with: URL(string: srcPath)!, completed: {
                     (image, error, type, url) in
                     self.moveToCenter()
@@ -396,7 +397,7 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 let h = CGFloat((h as NSString).floatValue)
                 
                 self.hoverView.alpha = 0
-                self.bigImg.frame = CGRect(x: 0, y: y,
+                self.bigImg.frame = CGRect(x: 8.0, y: y,
                                            width: SCREEN_WIDTH - 15, height: h)
             }
             
