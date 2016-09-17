@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FDTemplateLayoutCell
+import UITableView_FDTemplateLayoutCell
 
 class ReplyPage: UIViewController, UITableViewDelegate, UITableViewDataSource {
     

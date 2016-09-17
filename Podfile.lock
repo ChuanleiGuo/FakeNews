@@ -22,7 +22,7 @@ DEPENDENCIES:
   - MJRefresh
   - ReactiveCocoa (= 2.5)
   - SDWebImage (= 3.8)
-  - UITableView+FDTemplateLayoutCell
+  - UITableView+FDTemplateLayoutCell (= 1.4)
 
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
@@ -33,6 +33,6 @@ SPEC CHECKSUMS:
   SDWebImage: 7d9fe229266696de91eadf840c77ca15efd4bbd2
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: 10b586b2dcc0cd84fd053e95412cc24d9e79d253
+PODFILE CHECKSUM: 40af427f7a0be499321f70860de4ffd25250178a
 
 COCOAPODS: 1.0.1

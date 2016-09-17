@@ -10,7 +10,7 @@ target 'FakeNews' do
   pod 'MJRefresh'
   pod 'SDWebImage', '3.8'
   pod 'ReactiveCocoa','2.5'
-  pod 'UITableView+FDTemplateLayoutCell'
+  pod 'UITableView+FDTemplateLayoutCell', '1.4'
   pod 'FDFullscreenPopGesture','1.1'
   pod 'Kingfisher', '3.0.1'
 

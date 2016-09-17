@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WebImage
+import SDWebImage
 
 class NewsCell: UITableViewCell {
 

@@ -8,7 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
-import WebImage
+import SDWebImage
 
 fileprivate let SCREEN_WIDTH = UIScreen.main.bounds.width
 fileprivate let SCREEN_HEIGHT = UIScreen.main.bounds.height
