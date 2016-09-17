@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 fileprivate let screenWidth = UIScreen.main.bounds.size.width
 
@@ -138,6 +139,6 @@ class WeatherDetailPage: UIViewController {
         }
         // TODO: Add background image
         let bgURL = URL(string: self.weatherModel.pm2_5Entity.background2)!
-        bgImg.sd_setImage(with: bgURL, placeholderImage: UIImage(named: "QingTian"))
+        bgImg.kf_setImage(with: bgURL, placeholder: UIImage(named: "QingTian"))
     }
 }

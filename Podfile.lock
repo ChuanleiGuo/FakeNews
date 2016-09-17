@@ -10,9 +10,6 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
-  - SDWebImage (3.8.0):
-    - SDWebImage/Core (= 3.8.0)
-  - SDWebImage/Core (3.8.0)
   - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
@@ -21,7 +18,6 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - ReactiveCocoa (= 2.5)
-  - SDWebImage (= 3.8)
   - UITableView+FDTemplateLayoutCell (= 1.4)
 
 SPEC CHECKSUMS:
@@ -30,9 +26,8 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  SDWebImage: 7d9fe229266696de91eadf840c77ca15efd4bbd2
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: 40af427f7a0be499321f70860de4ffd25250178a
+PODFILE CHECKSUM: f204677eb47b074754885af4e99d0ef6ee9da0e7
 
 COCOAPODS: 1.0.1

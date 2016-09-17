@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 
 class NewsCell: UITableViewCell {
 
@@ -29,7 +29,8 @@ class NewsCell: UITableViewCell {
     }
     
     private func configureCell() {
-        imgIcon.sd_setImage(with: URL(string: newsModel.imgsrc), placeholderImage: UIImage(named: "302"))
+        imgIcon.kf_setImage(with: URL(string: newsModel.imgsrc),
+                            placeholder: UIImage(named: "302"))
         
         if titleLabel != nil {
             titleLabel.text = newsModel.title
@@ -51,10 +52,10 @@ class NewsCell: UITableViewCell {
         }
         
         if newsModel.imgextra.count == 2 && imgOther1 != nil && imgOther2 != nil {
-            imgOther1.sd_setImage(with: URL(string: newsModel.imgextra[0]["imgsrc"]!),
-                                       placeholderImage: UIImage(named: "302"))
-            imgOther2.sd_setImage(with: URL(string: newsModel.imgextra[1]["imgsrc"]!),
-                                       placeholderImage: UIImage(named: "302"))
+            imgOther1.kf_setImage(with: URL(string: newsModel.imgextra[0]["imgsrc"]!),
+                                  placeholder: UIImage(named: "302"))
+            imgOther2.kf_setImage(with: URL(string: newsModel.imgextra[1]["imgsrc"]!),
+                                  placeholder: UIImage(named: "302"))
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsDetailBottomCell: UITableViewCell {
 
@@ -107,16 +108,16 @@ class NewsDetailBottomCell: UITableViewCell {
         userLocationLabel.text = "\(replyModel.address), \(replyModel.rtime)"
         replyDetail.text = replyModel.say
         goodLabel.text = "\(replyModel.suppose)顶"
-        iconImg.sd_setImage(with: URL(string: replyModel.icon),
-                            placeholderImage: UIImage(named: "comment_profile_mars"))
+        iconImg.kf_setImage(with: URL(string: replyModel.icon),
+                            placeholder: UIImage(named: "comment_profile_mars"))
         iconImg.layer.cornerRadius = iconImg.width / 2
         iconImg.layer.masksToBounds = true
         iconImg.layer.shouldRasterize = true
     }
     
     private func configureSameNewsCell() {
-        newsIcon.sd_setImage(with: URL(string: sameNewsEntity.imgsrc),
-                             placeholderImage: UIImage(named: "303"))
+        newsIcon.kf_setImage(with: URL(string: sameNewsEntity.imgsrc),
+                             placeholder: UIImage(named: "303"))
         newsIcon.layer.cornerRadius = 2
         newsIcon.layer.masksToBounds = true
         newsIcon.layer.shouldRasterize = true

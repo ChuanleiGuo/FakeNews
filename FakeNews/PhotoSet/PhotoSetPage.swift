@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
+import Kingfisher
 
 class PhotoSetPage: UIViewController, UIScrollViewDelegate {
     
@@ -141,8 +142,8 @@ class PhotoSetPage: UIViewController, UIScrollViewDelegate {
         let purl = URL(string: (photoSet.photos[index] as! PhotosDetailEntity).imgurl)
         
         if photoImgView.image == nil {
-            photoImgView.sd_setImage(with: purl,
-                                     placeholderImage: UIImage(named: "photoview_image_default_white"))
+            photoImgView.kf_setImage(with: purl,
+                                     placeholder: UIImage(named: "photoview_image_default_white"))
         }
     }
     

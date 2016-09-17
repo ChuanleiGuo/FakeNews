@@ -8,7 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
-import SDWebImage
+import Kingfisher
 
 fileprivate let SCREEN_WIDTH = UIScreen.main.bounds.width
 fileprivate let SCREEN_HEIGHT = UIScreen.main.bounds.height
@@ -377,11 +377,10 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 hoverView.alpha = 0
             
             } else {
-                imgView.sd_setImage(with: URL(string: srcPath)!, completed: {
-                    (image, error, type, url) in
+                imgView.kf_setImage(with: URL(string: srcPath), completionHandler: {
+                    (image, error, cacheType, url) in
                     self.moveToCenter()
                 })
-                
             }
             moveToCenter()
             
