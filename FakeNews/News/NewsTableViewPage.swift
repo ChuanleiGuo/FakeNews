@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class NewsTableViewPage: UITableViewController {
 
@@ -32,7 +33,21 @@ class NewsTableViewPage: UITableViewController {
         
         view.backgroundColor = UIColor.clear
         // TODO: - Refresh
-        loadData()
+        
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            [unowned self] in
+            self.loadData()
+        })
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingBlock: { 
+            [unowned self] in
+            self.loadMoreData()
+        })
+        self.update = true
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(welcome),
+                                               name: NSNotification.Name("AdvertisementKey"),
+                                               object: nil)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -41,6 +56,22 @@ class NewsTableViewPage: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        guard UserDefaults.standard.bool(forKey: "update") else {
+            return
+        }
+        
+        if update == true {
+            tableView.mj_header.beginRefreshing()
+            update = false
+        }
+        NotificationCenter.default.post(Notification(name: Notification.Name("contentStart"),
+                                                     object: nil, userInfo: nil))
+    }
+    
+    @objc private func welcome() {
+        UserDefaults.standard.set(true, forKey: "update")
+        tableView.mj_header.beginRefreshing()
     }
     
     func loadData() {
@@ -58,21 +89,20 @@ class NewsTableViewPage: UITableViewController {
         let urlString = url as NSString
         let queue = DispatchQueue.main
         viewModel.fetchNewsEntityCommand.execute(urlString).subscribeNext({
-            [weak self] (arrayM) in
-            if let strongSelf = self {
-                if let arrayM = arrayM as? [NewsEntity] {
-                    if type == 1 {
-                        strongSelf.arrayList = arrayM
-                        queue.async {
-                            strongSelf.tableView.reloadData()
-                        }
-                        // strongSelf.tableView.reloadData()
-                    } else if type == 2 {
-                        strongSelf.arrayList.append(contentsOf: arrayM)
-                        queue.async {
-                            strongSelf.tableView.reloadData()
-                        }
-                        //strongSelf.tableView.reloadData()
+            [unowned self] (arrayM) in
+            
+            if let arrayM = arrayM as? [NewsEntity] {
+                if type == 1 {
+                    self.arrayList = arrayM
+                    queue.async {
+                        self.tableView.mj_header.endRefreshing()
+                        self.tableView.reloadData()
+                    }
+                } else if type == 2 {
+                    self.arrayList.append(contentsOf: arrayM)
+                    queue.async {
+                        self.tableView.mj_header.endRefreshing()
+                        self.tableView.reloadData()
                     }
                 }
             }

@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     var isWeatherShown = false
     var transImageView: UIImageView!
     
+    @IBOutlet weak var topToTop: NSLayoutConstraint!
     var needScrollToTopPage: NewsTableViewPage!
     
     // MARK: lazy load
@@ -43,6 +44,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showRightItem),
+                                               name: Notification.Name("AdvertisementKey"),
+                                               object: nil)
         
         automaticallyAdjustsScrollViewInsets = false
         smallScorllView.showsVerticalScrollIndicator = false
@@ -81,6 +87,13 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        if UserDefaults.standard.bool(forKey: "top20") {
+//            topToTop.constant = 20
+//            UserDefaults.standard.set(false, forKey: "top20")
+//        } else {
+//            topToTop.constant = 0
+//        }
+        
         rightItem.isHidden = false
         if UserDefaults.standard.bool(forKey: "rightItem") {
             rightItem.isHidden = true
@@ -101,7 +114,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Private Methods
     
-    private func showRightItem() {
+    @objc private func showRightItem() {
         rightItem.isHidden = false
     }
     

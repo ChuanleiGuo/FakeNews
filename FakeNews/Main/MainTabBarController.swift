@@ -13,6 +13,12 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.set(true, forKey: "top20")
+        UserDefaults.standard.set(true, forKey: "rightItem")
+        UserDefaults.standard.set(true, forKey: "update")
+        
+        NotificationCenter.default.post(name: NSNotification.Name("AdvertisementKey"), object: nil)
+        
         let tabBar = TabBar()
         tabBar.frame = self.tabBar.bounds
         tabBar.backgroundColor = UIColor(red: 239/255.0, green: 239/255.0, blue: 239/255.0, alpha: 1)

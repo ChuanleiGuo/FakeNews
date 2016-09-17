@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        UserDefaults.standard.set(false, forKey: "update")
+        UserDefaults.standard.set(false, forKey: "top20")
         let app = UIApplication.shared
         app.statusBarStyle = .lightContent
         return true
