@@ -94,6 +94,8 @@ class MainViewController: UIViewController {
 //            topToTop.constant = 0
 //        }
         
+        navigationController!.navigationBar.barTintColor = UIColor.red
+        
         rightItem.isHidden = false
         if UserDefaults.standard.bool(forKey: "rightItem") {
             rightItem.isHidden = true

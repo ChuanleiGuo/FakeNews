@@ -204,6 +204,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6YB-fO-yBR"/>
                                         </constraints>
+                                        <color key="barTintColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="24E-K9-wkZ" id="nEW-gx-OTv"/>
@@ -215,6 +216,9 @@
                                             <constraint firstAttribute="height" constant="30" id="vh7-qg-EfR"/>
                                         </constraints>
                                         <state key="normal" title="取消"/>
+                                        <connections>
+                                            <action selector="cancelBtnClick:" destination="24E-K9-wkZ" eventType="touchUpInside" id="o6k-Ri-vQT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,7 +297,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LcB-Ik-BVQ" secondAttribute="trailing" id="09W-aE-M20"/>
                             <constraint firstItem="sB8-Xj-j0i" firstAttribute="top" secondItem="WAP-Hf-lbd" secondAttribute="top" id="1jH-dY-WDS"/>
@@ -301,15 +305,15 @@
                             <constraint firstItem="LcB-Ik-BVQ" firstAttribute="leading" secondItem="WAP-Hf-lbd" secondAttribute="leading" id="ORd-Ms-BTA"/>
                             <constraint firstAttribute="trailing" secondItem="sB8-Xj-j0i" secondAttribute="trailing" id="bYb-jG-fOX"/>
                             <constraint firstItem="zBk-oy-gCa" firstAttribute="leading" secondItem="WAP-Hf-lbd" secondAttribute="leading" id="dS7-1K-MBj"/>
+                            <constraint firstItem="LcB-Ik-BVQ" firstAttribute="top" secondItem="sB8-Xj-j0i" secondAttribute="bottom" id="hCf-uQ-Vpd"/>
                             <constraint firstAttribute="trailing" secondItem="zBk-oy-gCa" secondAttribute="trailing" id="iSC-Lt-aTJ"/>
-                            <constraint firstItem="LcB-Ik-BVQ" firstAttribute="top" secondItem="cDN-9g-v7P" secondAttribute="bottom" id="nvJ-jC-avB"/>
+                            <constraint firstItem="zBk-oy-gCa" firstAttribute="top" secondItem="sB8-Xj-j0i" secondAttribute="bottom" id="stQ-EB-gdj"/>
                             <constraint firstAttribute="bottom" secondItem="zBk-oy-gCa" secondAttribute="bottom" id="vX5-bv-ZjS"/>
-                            <constraint firstItem="zBk-oy-gCa" firstAttribute="top" secondItem="cDN-9g-v7P" secondAttribute="bottom" id="vf9-jU-tCd"/>
                             <constraint firstAttribute="bottom" secondItem="LcB-Ik-BVQ" secondAttribute="bottom" id="y3m-8e-2Q6"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="benginView" destination="LcB-Ik-BVQ" id="sQb-4c-now"/>
+                        <outlet property="beginView" destination="LcB-Ik-BVQ" id="DT4-6E-Bmp"/>
                         <outlet property="cancelButton" destination="1CN-Nj-AYr" id="kSL-rD-DIY"/>
                         <outlet property="hotWordView" destination="Rmq-hF-b3L" id="rvZ-G0-mgs"/>
                         <outlet property="searchBar" destination="wqr-gI-33b" id="040-QJ-NUT"/>
@@ -357,7 +361,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gbg-1B-j3S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="dhs-jt-z5r"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Xqy-Yg-3Vz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Xqy-Yg-3Vz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

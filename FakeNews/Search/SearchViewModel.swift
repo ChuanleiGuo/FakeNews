@@ -15,6 +15,10 @@ class SearchViewModel {
     var fetchHotWordCommand: RACCommand!
     var fetchSearchResultCommand: RACCommand!
     
+    init() {
+        setupRACCommand()
+    }
+    
     private func setupRACCommand() {
         fetchHotWordCommand = RACCommand(signal: { [unowned self] (input) -> RACSignal? in
             return RACSignal.createSignal({ (subscriber) -> RACDisposable? in
@@ -87,7 +91,7 @@ class SearchViewModel {
                     
                     do {
                         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                        if let docs = json["doc"] as? [String: Any], let results = docs["results"] as? Array<[String: String]> {
+                        if let docs = json["doc"] as? [String: Any], let results = docs["result"] as? Array<[String: String]> {
                             success(results)
                         }
                         

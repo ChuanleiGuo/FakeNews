@@ -20,10 +20,12 @@ class SearchListCell: UITableViewCell {
     var model: SearchListEntity! {
         didSet {
             var s = model.title
-            let replaceRange = s.startIndex..<s.endIndex
+            var replaceRange = s.startIndex..<s.endIndex
             s = s.replacingOccurrences(of: "<em>", with: "<", options: .caseInsensitive, range: replaceRange)
-            s = s.replacingOccurrences(of: "</em>", with: ">", options: .caseInsensitive, range: replaceRange)
             
+            replaceRange = s.startIndex..<s.endIndex
+            s = s.replacingOccurrences(of: "</em>", with: ">", options: .caseInsensitive, range: replaceRange)
+            titleLabel.setColoredText(s)
             timeLabel.text = model.ptime
         }
     }

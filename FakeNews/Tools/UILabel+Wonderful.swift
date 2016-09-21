@@ -65,11 +65,11 @@ extension UILabel {
                                                options: .caseInsensitive,
                                                range: mStr1.startIndex..<mStr1.endIndex)
             
-            mStr2 = mStr1.replacingOccurrences(of: "<",
+            mStr2 = mStr2.replacingOccurrences(of: "<",
                                                with: "",
                                                options: .caseInsensitive,
                                                range: mStr2.startIndex..<mStr2.endIndex)
-            mStr2 = mStr1.replacingOccurrences(of: ">",
+            mStr2 = mStr2.replacingOccurrences(of: ">",
                                                with: "",
                                                options: .caseInsensitive,
                                                range: mStr2.startIndex..<mStr2.endIndex)
@@ -125,14 +125,18 @@ extension UILabel {
                 if length > 5000 {
                     break
                 }
+                
+                let r1 = NSMakeRange(0, range1.location + range1.length)
                 mString = mString.replacingOccurrences(of: beginString,
                                                        with: "",
                                                        options: .caseInsensitive,
-                                                       range: range1) as NSString
+                                                       range: r1) as NSString
+                
+                let r2 = NSMakeRange(0, range2.location + range2.length - 1)
                 mString = mString.replacingOccurrences(of: endString,
                                                        with: "",
                                                        options: .caseInsensitive,
-                                                       range: range2) as NSString
+                                                       range: r2) as NSString
                 ranges.append(NSMakeRange(location, length))
             }
         }
