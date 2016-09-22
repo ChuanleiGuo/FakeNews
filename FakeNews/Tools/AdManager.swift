@@ -26,24 +26,31 @@ struct AdManager {
             try? FileManager.default.removeItem(atPath: kCachedCurrentImage)
             try? FileManager.default.moveItem(atPath: kCachedNewImage, toPath: kCachedCurrentImage)
         }
-        if let imgData = try? Data(contentsOf: URL(string: kCachedCurrentImage)!) {
-            return UIImage(data: imgData)
-        } else {
-            return nil
-        }
+//        if let imgData = try? Data(contentsOf: URL(string: kCachedCurrentImage)!) {
+//            return UIImage(data: imgData)
+//        } else {
+//            return nil
+//        }
+        let imgData = NSData(contentsOfFile: kCachedCurrentImage)
+        return UIImage(data: imgData as! Data)
     }
     
     static func loadLatestAdImage() {
         let now = Date().timeIntervalSince1970
-        let path = "http://g1.163.com/madr?app=7A16FBB6&platform=ios&category=startup&location=1&timestamp=\(now)"
+        let path = String(format: "http://g1.163.com/madr?app=7A16FBB6&platform=ios&category=startup&location=1&timestamp=%ld", now)
         
         let session = URLSession.shared
-        let dataTask = session.dataTask(with: URL(string: path)!) { (data, response, error) in
+        session.dataTask(with: URL(string: path)!) { (data, response, error) in
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200,
                 let data = data {
                 
+                let cfEnc = CFStringEncodings.GB_18030_2000
+                let enc = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEnc.rawValue))
+                let gb2312String = NSString(data: data, encoding: enc)!
+                let utf8Data = gb2312String.data(using: String.Encoding.utf8.rawValue)!
+                
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                    if let json = try JSONSerialization.jsonObject(with: utf8Data, options: []) as? [String: Any],
                         let ads = json["ads"] as? Array<[String: Any]>,
                         let res_urls1 = ads[0]["res_url"] as? [String] {
                         
@@ -68,13 +75,14 @@ struct AdManager {
                             downloadImage(imgUrl: imgUrl)
                         }
                     }
+                        
+                    
                 } catch let jsonError {
                     print(jsonError)
                 }
                 
             }
-        }
-        dataTask.resume()
+        }.resume()
     }
     
     private static func downloadImage(imgUrl url: String) {
@@ -85,7 +93,8 @@ struct AdManager {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: imgUrl) { (data, response, error) in
             if let data = data {
-                try? data.write(to: URL(string: kCachedNewImage)!, options: [.atomic])
+                let d = data as NSData
+                d.write(toFile: kCachedNewImage, atomically: true)
             }
         }
         dataTask.resume()

@@ -13,12 +13,39 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDefaults.standard.set(true, forKey: "top20")
-        UserDefaults.standard.set(true, forKey: "rightItem")
-        UserDefaults.standard.set(true, forKey: "update")
+        AdManager.loadLatestAdImage()
         
-        NotificationCenter.default.post(name: NSNotification.Name("AdvertisementKey"), object: nil)
-        
+        if AdManager.shouldDisplayAd {
+            UserDefaults.standard.set(true, forKey: "top20")
+            UserDefaults.standard.set(true, forKey: "rightItem")
+            
+            let adView = UIView(frame: UIScreen.main.bounds)
+            let adImg = UIImageView(image: AdManager.getAdImage())
+            let adBottomImg = UIImageView(image: UIImage(named: "adBottom.png"))
+            adView.addSubview(adBottomImg)
+            adView.addSubview(adImg)
+            adBottomImg.frame = CGRect(x: 0, y: view.height - 135, width: view.width, height: 135)
+            adImg.frame = CGRect(x: 0, y: 0, width: view.width, height: view.height - 135)
+            
+            adView.alpha = 0.99
+            view.addSubview(adView)
+            UIApplication.shared.isStatusBarHidden = true
+            
+            UIView.animate(withDuration: 3, animations: { 
+                adView.alpha = 1.0
+            }, completion: { (finished) in
+                UIApplication.shared.isStatusBarHidden = false
+                
+                UIView.animate(withDuration: 0.5, animations: { 
+                    adView.alpha = 0.0
+                }, completion: { (finished) in
+                    adView.removeFromSuperview()
+                })
+                NotificationCenter.default.post(name: NSNotification.Name("AdvertisementKey"), object: nil)
+            })
+        } else {
+            UserDefaults.standard.set(true, forKey: "update")
+        }       
         let tabBar = TabBar()
         tabBar.frame = self.tabBar.bounds
         tabBar.backgroundColor = UIColor(red: 239/255.0, green: 239/255.0, blue: 239/255.0, alpha: 1)
