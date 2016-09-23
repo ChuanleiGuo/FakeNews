@@ -142,7 +142,7 @@ class PhotoSetPage: UIViewController, UIScrollViewDelegate {
         let purl = URL(string: (photoSet.photos[index] as! PhotosDetailEntity).imgurl)
         
         if photoImgView.image == nil {
-            photoImgView.kf_setImage(with: purl,
+            photoImgView.kf.setImage(with: purl,
                                      placeholder: UIImage(named: "photoview_image_default_white"))
         }
     }

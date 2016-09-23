@@ -377,7 +377,7 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 hoverView.alpha = 0
             
             } else {
-                imgView.kf_setImage(with: URL(string: srcPath), completionHandler: {
+                imgView.kf.setImage(with: URL(string: srcPath), completionHandler: {
                     (image, error, cacheType, url) in
                     self.moveToCenter()
                 })

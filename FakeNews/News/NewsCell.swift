@@ -29,7 +29,7 @@ class NewsCell: UITableViewCell {
     }
     
     private func configureCell() {
-        imgIcon.kf_setImage(with: URL(string: newsModel.imgsrc),
+        imgIcon.kf.setImage(with: URL(string: newsModel.imgsrc),
                             placeholder: UIImage(named: "302"))
         
         if titleLabel != nil {
@@ -52,9 +52,9 @@ class NewsCell: UITableViewCell {
         }
         
         if newsModel.imgextra.count == 2 && imgOther1 != nil && imgOther2 != nil {
-            imgOther1.kf_setImage(with: URL(string: newsModel.imgextra[0]["imgsrc"]!),
+            imgOther1.kf.setImage(with: URL(string: newsModel.imgextra[0]["imgsrc"]!),
                                   placeholder: UIImage(named: "302"))
-            imgOther2.kf_setImage(with: URL(string: newsModel.imgextra[1]["imgsrc"]!),
+            imgOther2.kf.setImage(with: URL(string: newsModel.imgextra[1]["imgsrc"]!),
                                   placeholder: UIImage(named: "302"))
         }
     }

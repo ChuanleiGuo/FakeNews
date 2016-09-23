@@ -1,6 +1,6 @@
 PODS:
   - FDFullscreenPopGesture (1.1)
-  - Kingfisher (3.0.1)
+  - Kingfisher (3.1.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - ReactiveCocoa (2.5):
@@ -14,7 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - FDFullscreenPopGesture (= 1.1)
-  - Kingfisher (= 3.0.1)
+  - Kingfisher (= 3.1.0)
   - MJExtension
   - MJRefresh
   - ReactiveCocoa (= 2.5)
@@ -22,12 +22,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
+  Kingfisher: 7779f22e977393e9533a89a9685beb8f679d3767
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: f204677eb47b074754885af4e99d0ef6ee9da0e7
+PODFILE CHECKSUM: 19b6d6a5b14bb3d397c49e7c271fb3bd885a702d
 
 COCOAPODS: 1.0.1

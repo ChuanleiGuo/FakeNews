@@ -11,7 +11,7 @@ target 'FakeNews' do
   pod 'ReactiveCocoa','2.5'
   pod 'UITableView+FDTemplateLayoutCell', '1.4'
   pod 'FDFullscreenPopGesture','1.1'
-  pod 'Kingfisher', '3.0.1'
+  pod 'Kingfisher', '3.1.0'
 
   target 'FakeNewsTests' do
     inherit! :search_paths

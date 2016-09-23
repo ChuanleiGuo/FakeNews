@@ -108,7 +108,7 @@ class NewsDetailBottomCell: UITableViewCell {
         userLocationLabel.text = "\(replyModel.address), \(replyModel.rtime)"
         replyDetail.text = replyModel.say
         goodLabel.text = "\(replyModel.suppose)顶"
-        iconImg.kf_setImage(with: URL(string: replyModel.icon),
+        iconImg.kf.setImage(with: URL(string: replyModel.icon),
                             placeholder: UIImage(named: "comment_profile_mars"))
         iconImg.layer.cornerRadius = iconImg.width / 2
         iconImg.layer.masksToBounds = true
@@ -116,7 +116,7 @@ class NewsDetailBottomCell: UITableViewCell {
     }
     
     private func configureSameNewsCell() {
-        newsIcon.kf_setImage(with: URL(string: sameNewsEntity.imgsrc),
+        newsIcon.kf.setImage(with: URL(string: sameNewsEntity.imgsrc),
                              placeholder: UIImage(named: "303"))
         newsIcon.layer.cornerRadius = 2
         newsIcon.layer.masksToBounds = true
