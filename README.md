@@ -1,8 +1,8 @@
 # FakeNews
 
-This app is an imitation of [NetEase News(网易新闻)](https://itunes.apple.com/cn/app/wang-yi-xin-wen-zui-you-tai/id425349261?l=en&mt=8).I wrote this project, which is inspired by [SXNews](https://github.com/dsxNiubility/SXNews), for learning iOS Development purpose. All Swift code here are basically translated from the original Objective-C Code. So, the quality of code is not very good, and there are certainly many bugs. I'm sorry for that.
+This app is an imitation of [NetEase News(网易新闻)](https://itunes.apple.com/cn/app/wang-yi-xin-wen-zui-you-tai/id425349261?l=en&mt=8).I wrote this project, which is inspired by [SXNews](https://github.com/dsxNiubility/SXNews), for learning iOS Development purpose. All Swift code here are basically translated from the original Objective-C code. So, the quality of code is not very good, and there are certainly many bugs. I'm sorry for that.
 
-I'll keep maintaining this project. The code will be regularly rewrite in a Swifty way, and the dependency of all the Objective-C libraries will be change into pure Swift libraries, for the purpose of the elimination of ugly type casting in the code and improvement of code quality.
+I'll keep maintaining this project. The code will be regularly rewrote in a Swifty way, and the dependency of all the Objective-C libraries will be changed into pure Swift libraries, for the purpose of the elimination of ugly type casting in the code and improvement of code quality.
 
 ## Features
 
