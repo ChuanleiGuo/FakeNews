@@ -39,7 +39,7 @@ I'll keep maintaining this project. The code will be regularly rewrote in a Swif
 
 1. cd to the Folder of FakeNews
 2. run `Pod install`
-3. open the FakeNews.wcworkspace
+3. open the FakeNews.xcworkspace
 
 Then, everything should work fine.
 
