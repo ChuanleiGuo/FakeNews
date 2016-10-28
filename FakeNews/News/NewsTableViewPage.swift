@@ -108,7 +108,7 @@ class NewsTableViewPage: UITableViewController {
             }
         }, error: {
             error in
-            print(error)
+            print(error.debugDescription)
         })
     }
     

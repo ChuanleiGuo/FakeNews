@@ -69,7 +69,7 @@ class DetailPage: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
         
         viewModel.fetchNewsDetailCommand.execute(nil).subscribeError({ (error) in
-            print(error)
+            print(error.debugDescription)
         }, completed: {
             self.showInWebView()
             self.requestForFeedbackList()
